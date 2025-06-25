@@ -3,10 +3,19 @@
   src: url(assets/Kanit/Kanit-Regular.ttf);
 }
 
+:root {
+  --ligthgray: #f9faff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  background-color: var(--ligthgray);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

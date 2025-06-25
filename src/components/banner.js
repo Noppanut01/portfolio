@@ -9,16 +9,15 @@ function Banner() {
             <br />
 
             <div className="desc">
-                wall section printed automobile slowly powder youth explore cup duck bottom yellow know discover rise per equipment other round adjective settle shout pair bowl
+                My name is Noppanut Maiprot. I am Electronic Engineering Technology(EnET-C) student from KMUTNB.
             </div>
             <br />
             <div className='button'>
-                <button className="project"><a href="https://github.com/Noppanut01" target="_blank">Projects</a></button>
-                <button className="github"><a href="https://github.com/Noppanut01" target="_blank">Github</a></button>
+                <a href="https://github.com/Noppanut01" target="_blank"><button className="project">Projects</button></a>
+                <a href="https://github.com/Noppanut01" target="_blank"><button className="github">Github</button></a>
             </div>
         </div >
     )
 }
-
 
 export default Banner 
