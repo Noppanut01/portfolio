@@ -1,30 +1,118 @@
 @font-face {
-  font-family: kanit;
+  font-family: 'Kanit';
   src: url(assets/Kanit/Kanit-Regular.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url(assets/Kanit/Kanit-Medium.ttf);
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url(assets/Kanit/Kanit-SemiBold.ttf);
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url(assets/Kanit/Kanit-Bold.ttf);
+  font-weight: 700;
+  font-display: swap;
 }
 
 :root {
-  --ligthgray: #f9faff;
+  --primary: #ffc100;
+  --primary-dark: #e6ad00;
+  --secondary: #f9faff;
+  --dark: #1a1a1a;
+  --gray: #6b7280;
+  --gray-light: #f3f4f6;
+  --white: #ffffff;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: var(--ligthgray);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--secondary) 0%, #e0e7ff 100%);
+  font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  /* font-family: kanit; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--dark);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Button base styles */
+button {
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
 }
