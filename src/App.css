@@ -1,42 +1,76 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Modern Umber Color Palette - Portfolio Theme */
+:root {
+  /* Primary Umbers - Rich, earthy tones */
+  --umber-dark: #3c2e26;
+  --umber-medium: #5d453a;
+  --umber-light: #7d5e4f;
+  --umber-pale: #9d7e6f;
+
+  /* Warm Neutrals */
+  --warm-white: #faf8f5;
+  --cream: #f5f1ec;
+  --warm-gray: #e8e2db;
+  --soft-gray: #d1c7bd;
+
+  /* Cool Neutrals for contrast */
+  --charcoal: #2a2a2a;
+  --slate: #404040;
+  --ash: #757575;
+  --silver: #b8b8b8;
+
+  /* Accent Colors */
+  --terracotta: #a0522d;
+  --burnt-sienna: #8b4513;
+  --ochre: #cc7722;
+  --sage: #9caf88;
+
+  /* Functional Colors */
+  --success: #6b8e23;
+  --warning: #daa520;
+  --error: #a0522d;
+  --info: #708090;
+
+  /* Gradients */
+  --gradient-warm: linear-gradient(135deg, var(--umber-light), var(--terracotta));
+  --gradient-neutral: linear-gradient(135deg, var(--warm-gray), var(--cream));
+  --gradient-dark: linear-gradient(135deg, var(--umber-dark), var(--charcoal));
+
+  /* Typography - Modern Portfolio Fonts */
+  --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Playfair Display', 'Georgia Pro', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Font Sizes - Fluid Typography */
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --fs-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --fs-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --fs-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --fs-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);
+  --fs-4xl: clamp(2.75rem, 2.3rem + 2.25vw, 4rem);
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --ls-tight: -0.025em;
+  --ls-normal: 0;
+  --ls-wide: 0.05em;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
