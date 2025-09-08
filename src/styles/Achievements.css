@@ -1,0 +1,203 @@
+.Achievements {
+    padding: 80px 20px;
+    background: var(--gradient-dark);
+    color: var(--warm-white);
+    font-family: var(--font-primary);
+}
+
+.achievements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Achievements .title {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--warm-white);
+    font-family: var(--font-secondary);
+    letter-spacing: var(--ls-tight);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.category-section {
+    background: rgba(250, 248, 245, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--umber-light);
+    transition: transform 0.3s ease;
+}
+
+.category-section:hover {
+    transform: translateY(-5px);
+}
+
+.category-title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--ochre);
+    font-family: var(--font-secondary);
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: var(--ls-normal);
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.achievement-card {
+    display: flex;
+    gap: 20px;
+    background: rgba(250, 248, 245, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(250, 248, 245, 0.1);
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    background: rgba(250, 248, 245, 0.1);
+    transform: translateX(10px);
+}
+
+.achievement-icon {
+    font-size: var(--fs-3xl);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-warm);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.achievement-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    color: var(--warm-white);
+    margin: 0;
+    line-height: var(--lh-tight);
+}
+
+.achievement-date {
+    font-size: var(--fs-sm);
+    color: var(--ochre);
+    font-weight: var(--fw-medium);
+    background: rgba(204, 119, 34, 0.2);
+    padding: 4px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.achievement-description {
+    font-size: var(--fs-base);
+    color: var(--cream);
+    line-height: var(--lh-normal);
+    margin-bottom: 10px;
+}
+
+.credential-info {
+    margin-top: 10px;
+}
+
+.credential-info small {
+    font-size: var(--fs-xs);
+    color: var(--soft-gray);
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.credentials-note {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.note-card {
+    background: var(--gradient-warm);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    color: var(--warm-white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.note-card h3 {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    margin-bottom: 15px;
+    font-family: var(--font-secondary);
+}
+
+.note-card p {
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .Achievements {
+        padding: 60px 20px;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .category-section {
+        padding: 30px 20px;
+    }
+    
+    .achievement-card {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .achievement-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .achievement-date {
+        align-self: flex-start;
+    }
+    
+    .achievement-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--fs-2xl);
+    }
+    
+    .note-card {
+        padding: 30px 20px;
+    }
+}

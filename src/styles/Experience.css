@@ -1,0 +1,220 @@
+.Experience {
+    padding: 80px 20px;
+    background: var(--cream);
+    color: var(--umber-dark);
+    font-family: var(--font-primary);
+}
+
+.experience-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.Experience .title {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--umber-dark);
+    font-family: var(--font-secondary);
+    letter-spacing: var(--ls-tight);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--terracotta);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -23px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    border: 3px solid var(--cream);
+    z-index: 2;
+}
+
+.experience-card {
+    background: var(--warm-white);
+    border-radius: 15px;
+    padding: 40px;
+    margin-left: 30px;
+    box-shadow: 0 10px 30px rgba(60, 46, 38, 0.1);
+    border: 1px solid var(--warm-gray);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(60, 46, 38, 0.15);
+}
+
+.experience-header {
+    margin-bottom: 25px;
+}
+
+.job-title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-semibold);
+    color: var(--umber-dark);
+    font-family: var(--font-secondary);
+    margin-bottom: 8px;
+}
+
+.company-name {
+    font-size: var(--fs-lg);
+    color: var(--terracotta);
+    font-weight: var(--fw-medium);
+    margin-bottom: 12px;
+}
+
+.job-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.period {
+    font-size: var(--fs-base);
+    color: var(--slate);
+    font-weight: var(--fw-regular);
+}
+
+.location {
+    font-size: var(--fs-base);
+    color: var(--slate);
+    font-weight: var(--fw-regular);
+}
+
+.job-type {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-type.internship {
+    background: rgba(139, 69, 19, 0.1);
+    color: var(--burnt-sienna);
+}
+
+.job-type.freelance {
+    background: rgba(204, 119, 34, 0.1);
+    color: var(--ochre);
+}
+
+.job-type.part-time {
+    background: rgba(156, 175, 136, 0.2);
+    color: var(--sage);
+}
+
+.job-description {
+    margin-bottom: 25px;
+}
+
+.job-description p {
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+    color: var(--slate);
+}
+
+.achievements {
+    margin-bottom: 25px;
+}
+
+.achievements h4,
+.experience-technologies h4 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    color: var(--umber-dark);
+    margin-bottom: 15px;
+}
+
+.achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements li {
+    font-size: var(--fs-base);
+    color: var(--slate);
+    line-height: var(--lh-normal);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.achievements li::before {
+    content: '▸';
+    color: var(--terracotta);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: var(--gradient-warm);
+    color: var(--warm-white);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+}
+
+@media (max-width: 768px) {
+    .Experience {
+        padding: 60px 20px;
+    }
+    
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-marker {
+        left: -18px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .experience-card {
+        margin-left: 20px;
+        padding: 30px 20px;
+    }
+    
+    .job-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

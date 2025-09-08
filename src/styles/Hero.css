@@ -1,0 +1,109 @@
+.Hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    min-height: 100vh;
+    background: var(--gradient-neutral);
+    font-family: var(--font-primary);
+
+    & .info-section {
+        display: inherit;
+        flex-direction: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        padding: 2rem;
+
+        & .title {
+            font-weight: var(--fw-bold);
+            font-size: var(--fs-4xl);
+            padding: inherit;
+            color: var(--umber-dark);
+            font-family: var(--font-secondary);
+            letter-spacing: var(--ls-tight);
+        }
+
+        & .subtitle {
+            font-weight: var(--fw-semibold);
+            color: var(--terracotta);
+            font-size: var(--fs-3xl);
+            letter-spacing: var(--ls-normal);
+        }
+
+        & .desc {
+            color: var(--slate);
+            padding: inherit;
+            font-size: var(--fs-2xl);
+            text-align: center;
+            line-height: var(--lh-relaxed);
+            font-weight: var(--fw-regular);
+        }
+    }
+
+    & .btn-section {
+        & .proj-btn {
+            padding: 1rem 2rem;
+            font-size: var(--fs-lg);
+            margin-right: 0.5rem;
+            transition: all 0.5s ease;
+            background: var(--gradient-warm);
+            border: none;
+            border-radius: 0.7rem;
+            color: var(--warm-white);
+            font-family: var(--font-primary);
+            font-weight: var(--fw-medium);
+            cursor: pointer;
+        }
+
+        & .proj-btn:hover {
+            transform: translateY(-3%);
+            box-shadow: 0 8px 25px rgba(160, 82, 45, 0.3);
+        }
+
+        & .get-btn {
+            padding: 1rem 2rem;
+            font-size: var(--fs-lg);
+            margin-left: 0.5rem;
+            border-radius: 0.7rem;
+            border: 2px solid var(--terracotta);
+            background-color: transparent;
+            color: var(--terracotta);
+            transition: all 0.5s ease;
+            font-family: var(--font-primary);
+            font-weight: var(--fw-medium);
+            cursor: pointer;
+        }
+
+        & .get-btn:hover {
+            background-color: var(--terracotta);
+            color: var(--warm-white);
+            transform: translateY(-3%);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Hero {
+        padding: 2rem 1rem;
+    }
+    
+    .Hero .info-section .title {
+        font-size: var(--fs-3xl);
+    }
+    
+    .Hero .info-section .subtitle {
+        font-size: var(--fs-2xl);
+    }
+    
+    .Hero .info-section .desc {
+        font-size: var(--fs-lg);
+    }
+    
+    .Hero .btn-section .proj-btn,
+    .Hero .btn-section .get-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: var(--fs-base);
+        margin: 0.25rem;
+    }
+}

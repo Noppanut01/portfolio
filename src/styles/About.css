@@ -1,0 +1,120 @@
+.About {
+    padding: 80px 20px;
+    background: var(--cream);
+    color: var(--umber-dark);
+    font-family: var(--font-primary);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--terracotta);
+    box-shadow: 0 10px 30px rgba(60, 46, 38, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-section {
+    text-align: left;
+}
+
+.About .title {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-bold);
+    margin-bottom: 20px;
+    color: var(--umber-dark);
+    font-family: var(--font-secondary);
+    letter-spacing: var(--ls-tight);
+}
+
+.About .subtitle {
+    font-size: var(--fs-2xl);
+    color: var(--terracotta);
+    margin-bottom: 30px;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-normal);
+}
+
+.About .desc {
+    font-size: var(--fs-lg);
+    line-height: var(--lh-relaxed);
+    color: var(--slate);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: var(--fw-regular);
+}
+
+.highlight-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    color: var(--terracotta);
+    font-family: var(--font-secondary);
+}
+
+.stat-label {
+    font-size: var(--fs-sm);
+    color: var(--slate);
+    font-weight: var(--fw-medium);
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .About {
+        padding: 60px 20px;
+    }
+    
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .info-section {
+        text-align: center;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .highlight-stats {
+        justify-content: center;
+        gap: 20px;
+    }
+}
