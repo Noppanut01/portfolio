@@ -1,71 +1,72 @@
-/* Modern Umber Color Palette - Portfolio Theme */
+/* Retro Macintosh Terminal Theme - Portfolio */
 :root {
-  /* Primary Umbers - Rich, earthy tones */
-  --umber-dark: #3c2e26;
-  --umber-medium: #5d453a;
-  --umber-light: #7d5e4f;
-  --umber-pale: #9d7e6f;
+  /* Retro Mac Terminal Background Colors */
+  --mac-terminal-bg: #000000;
+  --mac-window-bg: #1a1a1a;
+  --mac-titlebar-bg: #3c3c3c;
+  --mac-content-bg: #000000;
 
-  /* Warm Neutrals */
-  --warm-white: #faf8f5;
-  --cream: #f5f1ec;
-  --warm-gray: #e8e2db;
-  --soft-gray: #d1c7bd;
+  /* Retro Mac Terminal Text Colors */
+  --mac-green: #00ff00;
+  --mac-green-bright: #40ff40;
+  --mac-amber: #ffcc00;
+  --mac-white: #ffffff;
+  --mac-gray: #c0c0c0;
+  --mac-gray-dark: #808080;
+  --mac-red: #ff4040;
+  --mac-blue: #4080ff;
 
-  /* Cool Neutrals for contrast */
-  --charcoal: #2a2a2a;
-  --slate: #404040;
-  --ash: #757575;
-  --silver: #b8b8b8;
+  /* Classic Mac System Colors */
+  --mac-window-frame: #808080;
+  --mac-button-red: #ff6058;
+  --mac-button-yellow: #ffbd2e;
+  --mac-button-green: #28ca42;
 
-  /* Accent Colors */
-  --terracotta: #a0522d;
-  --burnt-sienna: #8b4513;
-  --ochre: #cc7722;
-  --sage: #9caf88;
+  /* Terminal Borders */
+  --terminal-border: #808080;
+  --terminal-border-bright: #c0c0c0;
+  
+  /* GitHub Gradients */
+  --gradient-github: linear-gradient(135deg, var(--github-canvas-default) 0%, var(--github-canvas-subtle) 100%);
 
-  /* Functional Colors */
-  --success: #6b8e23;
-  --warning: #daa520;
-  --error: #a0522d;
-  --info: #708090;
+  /* Retro Mac Typography */
+  --font-primary: 'Monaco', 'Menlo', 'Courier New', monospace;
+  --font-secondary: 'Monaco', 'Menlo', 'Courier New', monospace;
+  --font-mono: 'Monaco', 'Menlo', 'Courier New', monospace;
+  --font-system: 'Chicago', 'Helvetica', 'Arial', sans-serif;
 
-  /* Gradients */
-  --gradient-warm: linear-gradient(135deg, var(--umber-light), var(--terracotta));
-  --gradient-neutral: linear-gradient(135deg, var(--warm-gray), var(--cream));
-  --gradient-dark: linear-gradient(135deg, var(--umber-dark), var(--charcoal));
-
-  /* Typography - Modern Portfolio Fonts */
-  --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-secondary: 'Playfair Display', 'Georgia Pro', Georgia, serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
-
-  /* Font Weights */
+  /* Font Weights - Apple Typography Scale */
+  --fw-ultralight: 100;
+  --fw-thin: 200;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
+  --fw-heavy: 800;
+  --fw-black: 900;
 
-  /* Font Sizes - Fluid Typography */
-  --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --fs-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-  --fs-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-  --fs-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-  --fs-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-  --fs-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-  --fs-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);
-  --fs-4xl: clamp(2.75rem, 2.3rem + 2.25vw, 4rem);
+  /* Font Sizes - Apple Typography Scale (Moderately increased for readability) */
+  --fs-caption: clamp(0.8125rem, 0.775rem + 0.1875vw, 0.9375rem);
+  --fs-footnote: clamp(0.9375rem, 0.875rem + 0.3125vw, 1.0625rem);
+  --fs-subhead: clamp(1rem, 0.9375rem + 0.3125vw, 1.125rem);
+  --fs-callout: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --fs-body: clamp(1.1875rem, 1.0625rem + 0.5875vw, 1.375rem);
+  --fs-headline: clamp(1.25rem, 1.125rem + 0.625vw, 1.5rem);
+  --fs-title3: clamp(1.4375rem, 1.3125rem + 0.625vw, 1.6875rem);
+  --fs-title2: clamp(1.625rem, 1.4375rem + 0.9375vw, 2rem);
+  --fs-title1: clamp(1.9375rem, 1.6875rem + 1.25vw, 2.5rem);
+  --fs-large-title: clamp(2.375rem, 2rem + 1.875vw, 3.75rem);
 
-  /* Line Heights */
-  --lh-tight: 1.2;
-  --lh-normal: 1.5;
-  --lh-relaxed: 1.75;
+  /* Line Heights - Apple Standards */
+  --lh-tight: 1.08333;
+  --lh-normal: 1.29167;
+  --lh-relaxed: 1.38095;
 
-  /* Letter Spacing */
-  --ls-tight: -0.025em;
-  --ls-normal: 0;
-  --ls-wide: 0.05em;
+  /* Letter Spacing - Apple Standards */
+  --ls-tight: -0.41px;
+  --ls-normal: 0px;
+  --ls-wide: 0.38px;
 }
 
 
@@ -75,17 +76,156 @@
   box-sizing: border-box;
 }
 
-/* Smooth scrolling for the entire page */
+/* Terminal Global Styles */
 html {
   scroll-behavior: smooth;
+  background: var(--mac-terminal-bg);
 }
 
-/* Offset body content for fixed header */
 body {
-  padding-top: 80px; /* Height of fixed header */
+  padding-top: 80px;
+  background: var(--mac-terminal-bg);
+  color: var(--mac-green);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  font-size: 12px;
+  line-height: 1.2;
+  animation: macStartup 2s ease-out;
 }
 
-/* Ensure sections are properly spaced for navigation */
+/* Mac startup animation */
+@keyframes macStartup {
+  0% {
+    background: #ffffff;
+    opacity: 0;
+  }
+  20% {
+    background: #ffffff;
+    opacity: 1;
+  }
+  40% {
+    background: #cccccc;
+  }
+  60% {
+    background: #666666;
+  }
+  80% {
+    background: #333333;
+  }
+  100% {
+    background: var(--mac-terminal-bg);
+    opacity: 1;
+  }
+}
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-cursor::after {
+  content: '█';
+  color: var(--mac-green-bright);
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+/* Retro Mac CRT monitor effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Classic Mac scan lines with CRT flicker */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 255, 0, 0.03) 1px,
+    rgba(0, 255, 0, 0.03) 2px
+  );
+  z-index: -1;
+  pointer-events: none;
+  animation: crtFlicker 0.15s infinite linear alternate;
+}
+
+/* CRT monitor flicker effect */
+@keyframes crtFlicker {
+  0% { opacity: 1; }
+  98% { opacity: 1; }
+  99% { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
 section {
-  scroll-margin-top: 80px; /* Offset for fixed header */
+  scroll-margin-top: 80px;
+}
+
+/* Mac terminal text glow effect */
+.mac-text-glow {
+  text-shadow:
+    0 0 5px var(--mac-green),
+    0 0 10px var(--mac-green),
+    0 0 15px var(--mac-green);
+  animation: macTextGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes macTextGlow {
+  0% {
+    text-shadow:
+      0 0 5px var(--mac-green),
+      0 0 10px var(--mac-green),
+      0 0 15px var(--mac-green);
+  }
+  100% {
+    text-shadow:
+      0 0 8px var(--mac-green-bright),
+      0 0 15px var(--mac-green-bright),
+      0 0 20px var(--mac-green-bright);
+  }
+}
+
+/* Classic Mac window dragging effect */
+.mac-window-drag {
+  cursor: move;
+  user-select: none;
+}
+
+/* Mac terminal boot sequence */
+@keyframes macBoot {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

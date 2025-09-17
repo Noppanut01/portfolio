@@ -2,48 +2,18 @@ function Experience() {
     const experiences = [
         {
             title: "Software Development Intern",
-            company: "Tech Company Name",
+            company: "Company Name",
             period: "Jun 2024 - Aug 2024",
             type: "Internship",
-            location: "Bangkok, Thailand",
-            description: "Developed and maintained web applications using React and Node.js. Collaborated with senior developers on feature implementation and bug fixes.",
+            location: "France",
+            description: "International internship experience developing software solutions. Gained valuable experience working in a multicultural environment and contributing to real-world projects.",
             achievements: [
-                "Improved application performance by 25%",
-                "Implemented 5+ new features for user dashboard",
-                "Collaborated with team of 8 developers",
-                "Participated in code reviews and agile ceremonies"
+                "Successfully completed international internship program",
+                "Developed technical skills in professional environment",
+                "Collaborated with international team members",
+                "Adapted to new work culture and methodologies"
             ],
-            technologies: ["React", "Node.js", "JavaScript", "Git", "MongoDB"]
-        },
-        {
-            title: "Freelance Web Developer",
-            company: "Self-Employed",
-            period: "Jan 2023 - Present",
-            type: "Freelance",
-            location: "Remote",
-            description: "Created custom websites and web applications for small businesses and startups. Managed projects from conception to deployment.",
-            achievements: [
-                "Delivered 10+ successful projects",
-                "Maintained 98% client satisfaction rate",
-                "Generated $5K+ in revenue",
-                "Built responsive designs for various industries"
-            ],
-            technologies: ["HTML", "CSS", "JavaScript", "React", "WordPress", "PHP"]
-        },
-        {
-            title: "Teaching Assistant",
-            company: "Your University",
-            period: "Aug 2023 - Dec 2023",
-            type: "Part-time",
-            location: "University Campus",
-            description: "Assisted professor in teaching Computer Programming course. Helped students with coding assignments and debugging.",
-            achievements: [
-                "Tutored 50+ students in programming concepts",
-                "Graded assignments and provided feedback",
-                "Conducted lab sessions and office hours",
-                "Improved student pass rate by 15%"
-            ],
-            technologies: ["Python", "Java", "C++", "Teaching", "Mentoring"]
+            technologies: ["React", "Node.js", "JavaScript", "Git", "Professional Development"]
         }
     ];
 

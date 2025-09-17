@@ -1,23 +1,77 @@
 .Education {
-    padding: 80px 20px;
-    background: var(--warm-white);
-    color: var(--umber-dark);
+    padding: 100px 20px;
+    background: var(--mac-window-bg);
+    color: var(--mac-white);
     font-family: var(--font-primary);
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mac CRT scan lines effect */
+.Education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
+        );
+    pointer-events: none;
+    z-index: 1;
+    animation: scanlines 0.1s linear infinite;
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
 }
 
 .education-container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mac terminal command header */
+.education-container::before {
+    content: 'localhost:education user$ cat academic_records.txt';
+    display: block;
+    color: var(--mac-blue);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--mac-terminal-bg);
+    border: 1px solid var(--mac-window-frame);
+    border-radius: 6px;
+    font-weight: 500;
+    font-family: var(--font-primary);
 }
 
 .Education .title {
-    font-size: var(--fs-4xl);
+    font-size: var(--fs-large-title);
     font-weight: var(--fw-bold);
     text-align: center;
     margin-bottom: 60px;
-    color: var(--umber-dark);
+    color: var(--mac-green-bright);
     font-family: var(--font-secondary);
     letter-spacing: var(--ls-tight);
+    text-shadow: 0 0 15px var(--mac-green);
+    position: relative;
+}
+
+.Education .title::after {
+    content: '_';
+    animation: blink 1.5s infinite;
+    font-weight: normal;
 }
 
 .education-grid {
@@ -28,16 +82,38 @@
 }
 
 .education-card {
-    background: var(--cream);
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(60, 46, 38, 0.1);
-    border: 1px solid var(--warm-gray);
-    transition: transform 0.3s ease;
+    background: var(--mac-window-bg);
+    border-radius: 4px;
+    padding: 2rem;
+    box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.05);
+    border: 1px solid var(--mac-window-frame);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--mac-green), var(--mac-amber));
+    opacity: 0.6;
 }
 
 .education-card:hover {
-    transform: translateY(-5px);
+    border-color: var(--mac-green);
+    box-shadow:
+        0 0 25px rgba(0, 255, 0, 0.2),
+        inset 0 0 25px rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.education-card:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 10px var(--mac-green);
 }
 
 .education-header {
@@ -49,60 +125,128 @@
 }
 
 .degree-title {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-title2);
     font-weight: var(--fw-semibold);
-    color: var(--umber-dark);
+    color: var(--mac-green-bright);
     font-family: var(--font-secondary);
     margin-bottom: 10px;
+    text-shadow: 0 0 8px var(--mac-green);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.degree-title::before {
+    content: '📜 ';
+    position: absolute;
+    left: 0;
+    filter: sepia(1) hue-rotate(90deg);
 }
 
 .school-name {
-    font-size: var(--fs-lg);
-    color: var(--terracotta);
+    font-size: var(--fs-headline);
+    color: var(--mac-blue);
     font-weight: var(--fw-medium);
     margin-bottom: 5px;
 }
 
+.school-name::before {
+    content: '> ';
+    color: var(--mac-amber);
+    margin-right: 0.5rem;
+}
+
 .education-period {
-    font-size: var(--fs-base);
-    color: var(--slate);
+    font-size: var(--fs-callout);
+    color: var(--terminal-gray);
     font-weight: var(--fw-regular);
+}
+
+.education-period::before {
+    content: '📅 ';
+    margin-right: 0.3rem;
+    filter: sepia(1) hue-rotate(90deg);
 }
 
 .gpa-section {
     text-align: right;
-    background: rgba(160, 82, 45, 0.1);
+    background: var(--mac-terminal-bg);
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid var(--terracotta);
+    border-radius: 4px;
+    border: 1px solid var(--mac-window-frame);
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.gpa-section::before {
+    content: '[SCORE]';
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 0.7rem;
+    color: var(--terminal-gray);
+    font-weight: 500;
 }
 
 .gpa-label {
-    font-size: var(--fs-sm);
-    color: var(--slate);
+    font-size: var(--fs-subhead);
+    color: var(--terminal-gray);
     font-weight: var(--fw-medium);
     margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .gpa-value {
-    font-size: var(--fs-3xl);
+    font-size: var(--fs-title1);
     font-weight: var(--fw-bold);
-    color: var(--terracotta);
+    color: var(--mac-amber);
     font-family: var(--font-secondary);
     margin-bottom: 5px;
+    text-shadow: 0 0 10px var(--mac-amber);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.gpa-value::before {
+    content: '[';
+    color: var(--mac-blue);
+}
+
+.gpa-value::after {
+    content: ']';
+    color: var(--mac-blue);
 }
 
 .status {
-    font-size: var(--fs-xs);
-    color: var(--ochre);
+    font-size: var(--fs-footnote);
+    color: var(--mac-green);
     font-weight: var(--fw-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status::before {
+    content: '✓ ';
+    color: var(--mac-green-bright);
 }
 
 .relevant-courses h4 {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-title3);
     font-weight: var(--fw-semibold);
-    color: var(--umber-dark);
+    color: var(--mac-green-bright);
     margin-bottom: 20px;
+    text-shadow: 0 0 5px var(--mac-green);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.relevant-courses h4::before {
+    content: '📚 ';
+    position: absolute;
+    left: 0;
+    filter: sepia(1) hue-rotate(90deg);
 }
 
 .courses-grid {
@@ -112,12 +256,22 @@
 }
 
 .course-tag {
-    background: var(--gradient-warm);
-    color: var(--warm-white);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: var(--fs-sm);
+    background: transparent;
+    color: var(--mac-amber);
+    border: 1px solid var(--mac-window-frame);
+    padding: 6px 12px;
+    border-radius: 2px;
+    font-size: var(--fs-subhead);
     font-weight: var(--fw-medium);
+    transition: all 0.2s ease;
+    text-transform: lowercase;
+}
+
+.course-tag:hover {
+    border-color: var(--mac-amber);
+    background: var(--mac-amber);
+    color: var(--mac-terminal-bg);
+    box-shadow: 0 0 10px rgba(255, 191, 0, 0.3);
 }
 
 .transcript-section {
@@ -126,66 +280,139 @@
 }
 
 .transcript-card {
-    background: var(--gradient-dark);
-    color: var(--warm-white);
-    padding: 40px;
-    border-radius: 15px;
+    background: var(--mac-window-bg);
+    color: var(--mac-white);
+    padding: 2.5rem;
+    border-radius: 4px;
     text-align: center;
     max-width: 600px;
     width: 100%;
+    border: 1px solid var(--mac-window-frame);
+    box-shadow:
+        0 0 20px rgba(0, 255, 0, 0.1),
+        inset 0 0 20px rgba(0, 255, 0, 0.05);
+    position: relative;
+}
+
+.transcript-card::before {
+    content: 'localhost:documents user$ cat transcript.pdf';
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+    color: var(--mac-blue);
+    font-size: 0.8rem;
+    background: var(--mac-terminal-bg);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--mac-window-frame);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
 }
 
 .transcript-card h3 {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-title2);
     font-weight: var(--fw-bold);
     margin-bottom: 20px;
     font-family: var(--font-secondary);
+    color: var(--mac-green-bright);
+    text-shadow: 0 0 10px var(--mac-green);
+}
+
+.transcript-card h3::after {
+    content: '_';
+    animation: blink 1.8s infinite;
+    font-weight: normal;
 }
 
 .transcript-card p {
-    font-size: var(--fs-base);
+    font-size: var(--fs-callout);
     line-height: var(--lh-relaxed);
     margin-bottom: 30px;
     opacity: 0.9;
+    color: var(--mac-white);
+}
+
+.transcript-card p::before {
+    content: '> ';
+    color: var(--terminal-gray);
+    margin-right: 0.5rem;
 }
 
 .transcript-btn {
-    background: var(--gradient-warm);
-    color: var(--warm-white);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: var(--fs-lg);
+    background: transparent;
+    color: var(--mac-green);
+    border: 2px solid var(--mac-green);
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: var(--fs-headline);
     font-weight: var(--fw-semibold);
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: var(--font-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.transcript-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--mac-green), transparent);
+    transition: left 0.5s;
+}
+
+.transcript-btn:hover::before {
+    left: 100%;
 }
 
 .transcript-btn:hover {
+    background: var(--mac-green);
+    color: var(--mac-terminal-bg);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(160, 82, 45, 0.4);
 }
 
 @media (max-width: 768px) {
     .Education {
-        padding: 60px 20px;
+        padding: 80px 20px;
     }
-    
+
+    .education-container::before {
+        font-size: 0.75rem;
+        padding: 0.8rem;
+    }
+
     .education-card {
-        padding: 30px 20px;
+        padding: 1.5rem;
     }
-    
+
     .education-header {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .gpa-section {
         text-align: center;
     }
-    
+
+    .gpa-section::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .transcript-card {
-        padding: 30px 20px;
+        padding: 2rem 1.5rem;
+        margin-top: 40px;
+    }
+
+    .transcript-card::before {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+        top: -30px;
     }
 }

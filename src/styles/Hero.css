@@ -5,87 +5,345 @@
     align-items: center;
     padding: 4rem;
     min-height: 100vh;
-    background: var(--gradient-neutral);
+    background: var(--mac-terminal-bg);
+    position: relative;
+    overflow: hidden;
     font-family: var(--font-primary);
+    font-size: 12px;
+}
 
-    & .info-section {
-        display: inherit;
-        flex-direction: inherit;
-        justify-content: inherit;
-        align-items: inherit;
-        padding: 2rem;
+/* Terminal window container */
+.Hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(0deg, transparent 98%, var(--terminal-green) 100%),
+        linear-gradient(90deg, transparent 98%, var(--terminal-green) 100%);
+    background-size: 3px 3px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+}
 
-        & .title {
-            font-weight: var(--fw-bold);
-            font-size: var(--fs-4xl);
-            padding: inherit;
-            color: var(--umber-dark);
-            font-family: var(--font-secondary);
-            letter-spacing: var(--ls-tight);
-        }
+/* Mac CRT beam effect */
+.Hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--mac-green-bright), transparent);
+    animation: crtBeam 4s linear infinite;
+    z-index: 2;
+    opacity: 0.4;
+}
 
-        & .subtitle {
-            font-weight: var(--fw-semibold);
-            color: var(--terracotta);
-            font-size: var(--fs-3xl);
-            letter-spacing: var(--ls-normal);
-        }
+@keyframes crtBeam {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
 
-        & .desc {
-            color: var(--slate);
-            padding: inherit;
-            font-size: var(--fs-2xl);
-            text-align: center;
-            line-height: var(--lh-relaxed);
-            font-weight: var(--fw-regular);
-        }
-    }
+.Hero .terminal-window {
+    background: var(--mac-window-bg);
+    border: 2px solid var(--mac-window-frame);
+    border-radius: 6px;
+    box-shadow:
+        4px 4px 8px rgba(0, 0, 0, 0.5),
+        inset 1px 1px 0px rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
 
-    & .btn-section {
-        & .proj-btn {
-            padding: 1rem 2rem;
-            font-size: var(--fs-lg);
-            margin-right: 0.5rem;
-            transition: all 0.5s ease;
-            background: var(--gradient-warm);
-            border: none;
-            border-radius: 0.7rem;
-            color: var(--warm-white);
-            font-family: var(--font-primary);
-            font-weight: var(--fw-medium);
-            cursor: pointer;
-        }
+/* Mac terminal title bar */
+.Hero .terminal-header {
+    background: var(--mac-titlebar-bg);
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--mac-window-frame);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(180deg, #505050 0%, #3c3c3c 100%);
+}
 
-        & .proj-btn:hover {
-            transform: translateY(-3%);
-            box-shadow: 0 8px 25px rgba(160, 82, 45, 0.3);
-        }
+.Hero .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+}
 
-        & .get-btn {
-            padding: 1rem 2rem;
-            font-size: var(--fs-lg);
-            margin-left: 0.5rem;
-            border-radius: 0.7rem;
-            border: 2px solid var(--terracotta);
-            background-color: transparent;
-            color: var(--terracotta);
-            transition: all 0.5s ease;
-            font-family: var(--font-primary);
-            font-weight: var(--fw-medium);
-            cursor: pointer;
-        }
+.Hero .control {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+}
 
-        & .get-btn:hover {
-            background-color: var(--terracotta);
-            color: var(--warm-white);
-            transform: translateY(-3%);
-        }
-    }
+.Hero .control.red { background: var(--mac-button-red); }
+.Hero .control.yellow { background: var(--mac-button-yellow); }
+.Hero .control.green { background: var(--mac-button-green); }
+
+.Hero .terminal-title {
+    color: var(--mac-gray);
+    font-size: 11px;
+    margin-left: 1rem;
+    font-weight: normal;
+    font-family: var(--font-system);
+}
+
+/* Mac terminal content */
+.Hero .terminal-content {
+    padding: 1.5rem;
+    color: var(--mac-green);
+    background: var(--mac-content-bg);
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.Hero .terminal-line {
+    color: var(--mac-green);
+    margin-bottom: 0.5rem;
+}
+
+.Hero .prompt {
+    color: var(--mac-gray);
+    font-weight: bold;
+}
+
+.Hero .command {
+    color: var(--mac-green-bright);
+}
+
+.Hero .output-section {
+    margin: 1rem 0;
+    color: var(--mac-green);
+}
+
+.Hero .user-info {
+    margin-left: 1rem;
+}
+
+.Hero .info-line {
+    margin-bottom: 0.3rem;
+}
+
+.Hero .field {
+    color: var(--mac-amber);
+    font-weight: bold;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.Hero .value {
+    color: var(--mac-white);
+}
+
+.Hero .status-online {
+    color: var(--mac-green-bright);
+}
+
+.Hero .terminal-commands {
+    margin-top: 1rem;
+}
+
+.Hero .terminal-btn {
+    background: none;
+    border: none;
+    color: var(--mac-blue);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.Hero .terminal-btn:hover {
+    color: var(--mac-green-bright);
+}
+
+.Hero .terminal-prompt {
+    color: var(--mac-green-bright);
+    font-size: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.Hero .terminal-prompt::before {
+    content: 'user@portfolio:~$ ';
+    color: var(--mac-blue);
+    margin-right: 0.5rem;
+}
+
+.Hero .info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.Hero .info-section .title {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-large-title);
+    color: var(--terminal-green-bright);
+    font-family: var(--font-secondary);
+    letter-spacing: var(--ls-tight);
+    text-shadow: 0 0 10px var(--terminal-green);
+    animation: textGlow 2s ease-in-out infinite alternate;
+    margin-bottom: 1rem;
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px var(--terminal-green); }
+    100% { text-shadow: 0 0 20px var(--terminal-green), 0 0 30px var(--terminal-green); }
+}
+
+.Hero .info-section .subtitle {
+    font-weight: var(--fw-semibold);
+    color: var(--terminal-amber);
+    font-size: var(--fs-title1);
+    letter-spacing: var(--ls-normal);
+    margin-bottom: 0.5rem;
+}
+
+.Hero .info-section .subtitle::before {
+    content: '> ';
+    color: var(--terminal-cyan);
+}
+
+.Hero .info-section .desc {
+    color: var(--terminal-white);
+    font-size: var(--fs-title2);
+    text-align: center;
+    line-height: var(--lh-relaxed);
+    font-weight: var(--fw-regular);
+    margin: 1.5rem 0;
+    opacity: 0.9;
+}
+
+/* Blinking cursor */
+.Hero .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background: var(--terminal-green-bright);
+    margin-left: 0.1rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.Hero .btn-section {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Hero .btn-section .proj-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: var(--fs-headline);
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 2px solid var(--terminal-green);
+    border-radius: 0;
+    color: var(--terminal-green);
+    font-family: var(--font-primary);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Hero .btn-section .proj-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--terminal-green), transparent);
+    transition: left 0.5s;
+}
+
+.Hero .btn-section .proj-btn:hover::before {
+    left: 100%;
+}
+
+.Hero .btn-section .proj-btn:hover {
+    color: var(--terminal-bg-primary);
+    background: var(--terminal-green);
+    box-shadow: 
+        0 0 20px var(--terminal-green),
+        inset 0 0 20px rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.Hero .btn-section .get-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: var(--fs-headline);
+    border: 2px solid var(--terminal-cyan);
+    border-radius: 0;
+    background-color: transparent;
+    color: var(--terminal-cyan);
+    transition: all 0.3s ease;
+    font-family: var(--font-primary);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Hero .btn-section .get-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--terminal-cyan), transparent);
+    transition: left 0.5s;
+}
+
+.Hero .btn-section .get-btn:hover::before {
+    left: 100%;
+}
+
+.Hero .btn-section .get-btn:hover {
+    background-color: var(--terminal-cyan);
+    color: var(--terminal-bg-primary);
+    box-shadow: 
+        0 0 20px var(--terminal-cyan),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
     .Hero {
         padding: 2rem 1rem;
+    }
+    
+    .Hero .terminal-window {
+        width: 95%;
+    }
+    
+    .Hero .terminal-content {
+        padding: 1.5rem;
     }
     
     .Hero .info-section .title {
@@ -100,10 +358,16 @@
         font-size: var(--fs-lg);
     }
     
+    .Hero .btn-section {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+    
     .Hero .btn-section .proj-btn,
     .Hero .btn-section .get-btn {
         padding: 0.8rem 1.5rem;
         font-size: var(--fs-base);
-        margin: 0.25rem;
+        width: 100%;
     }
 }

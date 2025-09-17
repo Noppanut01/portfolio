@@ -1,31 +1,29 @@
 function Education() {
     const educationData = [
         {
-            degree: "Bachelor of Engineering in Computer Engineering",
-            school: "Your University Name",
-            period: "2021 - 2025",
-            gpa: "3.85/4.00",
-            status: "Expected Graduation",
+            degree: "Bachelor of Engineering in Electronics Technology Engineering",
+            school: "King Mongkut's University of Technology North Bangkok (KMUTNB)",
+            period: "2022 - 2026",
+            gpa: "3.29/4.00",
+            status: "Currently Studying",
             courses: [
-                "Data Structures & Algorithms",
-                "Database Management Systems", 
-                "Web Development",
+                "Computer Programming",
+                "Object-Oriented Programming", 
+                "Data Structures & Algorithm Analysis",
+                "Database & Data Technology",
+                "Web Application Development",
                 "Software Engineering",
-                "Computer Networks",
-                "Machine Learning"
-            ]
-        },
-        {
-            degree: "High School Diploma",
-            school: "Your High School Name", 
-            period: "2018 - 2021",
-            gpa: "3.9/4.00",
-            status: "Graduated with Honors",
-            courses: [
-                "Advanced Mathematics",
-                "Physics",
-                "Computer Science",
-                "English"
+                "Mobile Application Development",
+                "Machine Learning & Deep Learning",
+                "Artificial Intelligence",
+                "Computer Networks & Data Communication",
+                "Cybersecurity",
+                "Digital Image Processing",
+                "Operating Systems",
+                "Computer Architecture",
+                "Microcontroller Systems",
+                "Cloud Computing",
+                "Network Programming"
             ]
         }
     ];

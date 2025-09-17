@@ -1,8 +1,30 @@
 .About {
-    padding: 80px 20px;
-    background: var(--cream);
-    color: var(--umber-dark);
+    padding: 100px 20px;
+    background: var(--mac-terminal-bg);
+    color: var(--mac-white);
     font-family: var(--font-primary);
+    position: relative;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+/* Mac CRT scan lines effect */
+.About::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(0, 255, 0, 0.02) 1px,
+        rgba(0, 255, 0, 0.02) 2px
+    );
+    pointer-events: none;
+    z-index: 1;
 }
 
 .about-container {
@@ -12,90 +34,229 @@
     grid-template-columns: 1fr 2fr;
     gap: 60px;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .profile-section {
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+/* Terminal window frame for profile */
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid var(--terminal-border);
+    border-radius: 8px;
+    background: var(--terminal-bg-card);
+    z-index: -1;
+}
+
+/* Terminal header for profile window */
+.profile-section::after {
+    content: 'user_profile.img';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    height: 30px;
+    background: var(--terminal-bg-secondary);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid var(--terminal-border);
+    color: var(--terminal-gray);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-weight: 500;
 }
 
 .profile-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    border-radius: 8px;
     overflow: hidden;
-    border: 5px solid var(--terracotta);
-    box-shadow: 0 10px 30px rgba(60, 46, 38, 0.2);
-    transition: transform 0.3s ease;
+    border: 2px solid var(--terminal-green);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 0, 0.3),
+        inset 0 0 10px rgba(0, 255, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    box-shadow: 
+        0 0 50px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 255, 0, 0.2);
+    border-color: var(--terminal-green-bright);
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: sepia(0.3) hue-rotate(90deg) brightness(1.1);
+    transition: filter 0.3s ease;
+}
+
+.profile-image:hover img {
+    filter: sepia(0.5) hue-rotate(90deg) brightness(1.2) contrast(1.1);
 }
 
 .info-section {
     text-align: left;
+    background: var(--terminal-bg-card);
+    padding: 2rem;
+    border: 1px solid var(--terminal-border);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.05);
+}
+
+/* Terminal prompt in info section */
+.info-section::before {
+    content: 'user@about:~$ cat profile.txt';
+    position: absolute;
+    top: -35px;
+    left: 0;
+    color: var(--terminal-cyan);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--terminal-bg-primary);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--terminal-border);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
 }
 
 .About .title {
-    font-size: var(--fs-4xl);
+    font-size: var(--fs-large-title);
     font-weight: var(--fw-bold);
     margin-bottom: 20px;
-    color: var(--umber-dark);
+    color: var(--terminal-green-bright);
     font-family: var(--font-secondary);
     letter-spacing: var(--ls-tight);
+    text-shadow: 0 0 15px var(--terminal-green);
+    position: relative;
+}
+
+.About .title::after {
+    content: '_';
+    color: var(--terminal-green-bright);
+    animation: blink 1.2s infinite;
+    font-weight: normal;
 }
 
 .About .subtitle {
-    font-size: var(--fs-2xl);
-    color: var(--terracotta);
+    font-size: var(--fs-title2);
+    color: var(--terminal-amber);
     margin-bottom: 30px;
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-normal);
 }
 
+.About .subtitle::before {
+    content: '> ';
+    color: var(--terminal-cyan);
+    margin-right: 0.5rem;
+}
+
 .About .desc {
-    font-size: var(--fs-lg);
+    font-size: var(--fs-headline);
     line-height: var(--lh-relaxed);
-    color: var(--slate);
+    color: var(--terminal-white);
     max-width: 600px;
     margin: 0 auto;
     font-weight: var(--fw-regular);
+    opacity: 0.9;
 }
 
 .highlight-stats {
     display: flex;
     gap: 30px;
     margin-top: 30px;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--terminal-border);
 }
 
 .stat-item {
     text-align: center;
+    background: var(--terminal-bg-primary);
+    padding: 1rem;
+    border: 1px solid var(--terminal-border);
+    border-radius: 4px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, var(--terminal-green), transparent);
+    animation: rotate 4s linear infinite;
+    z-index: -1;
+}
+
+.stat-item::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--terminal-bg-primary);
+    border-radius: 2px;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .stat-number {
-    font-size: var(--fs-3xl);
+    font-size: var(--fs-title1);
     font-weight: var(--fw-bold);
-    color: var(--terracotta);
+    color: var(--terminal-green-bright);
     font-family: var(--font-secondary);
+    text-shadow: 0 0 10px var(--terminal-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.stat-number::before {
+    content: '[';
+    color: var(--terminal-cyan);
+}
+
+.stat-number::after {
+    content: ']';
+    color: var(--terminal-cyan);
 }
 
 .stat-label {
-    font-size: var(--fs-sm);
-    color: var(--slate);
+    font-size: var(--fs-subhead);
+    color: var(--terminal-gray);
     font-weight: var(--fw-medium);
-    margin-top: 5px;
+    margin-top: 8px;
+    text-transform: lowercase;
 }
 
 @media (max-width: 768px) {
     .About {
-        padding: 60px 20px;
+        padding: 80px 20px;
     }
     
     .about-container {
@@ -104,17 +265,38 @@
         text-align: center;
     }
     
+    .profile-section::after {
+        font-size: 0.7rem;
+        height: 25px;
+        padding: 0 10px;
+    }
+    
     .info-section {
         text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .info-section::before {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+        top: -30px;
     }
     
     .profile-image {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
     
     .highlight-stats {
-        justify-content: center;
-        gap: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stat-item {
+        padding: 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: var(--fs-2xl);
     }
 }

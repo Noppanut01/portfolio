@@ -1,86 +1,285 @@
 .Skills {
-    padding: 80px 20px;
-    background: var(--gradient-dark);
-    color: var(--warm-white);
+    padding: 100px 20px;
+    background: var(--mac-terminal-bg);
+    color: var(--mac-white);
     font-family: var(--font-primary);
+    position: relative;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+/* Mac CRT effect background */
+.Skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .skills-container {
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Terminal command header */
+.skills-container::before {
+    content: 'user@portfolio:~/skills$ ps aux | grep development';
+    display: block;
+    color: var(--terminal-cyan);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--terminal-bg-card);
+    border: 1px solid var(--terminal-border);
+    border-radius: 6px;
+    font-weight: 500;
+    font-family: var(--font-primary);
 }
 
 .Skills .title {
-    font-size: var(--fs-4xl);
+    font-size: var(--fs-large-title);
     font-weight: var(--fw-bold);
     text-align: center;
     margin-bottom: 60px;
-    color: var(--warm-white);
+    color: var(--terminal-green-bright);
     font-family: var(--font-secondary);
     letter-spacing: var(--ls-tight);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 0 15px var(--terminal-green);
+    position: relative;
+}
+
+.Skills .title::before {
+    content: 'PID  USER  %CPU  %MEM  COMMAND';
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    color: var(--terminal-gray);
+    font-weight: normal;
+    font-family: var(--font-primary);
+}
+
+.Skills .title::after {
+    content: '_';
+    animation: blink 1.4s infinite;
+    font-weight: normal;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 20px;
 }
 
+/* Terminal process listing style */
 .skill-item {
-    background: rgba(250, 248, 245, 0.1);
-    padding: 25px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--umber-light);
-    transition: transform 0.3s ease;
+    background: var(--terminal-bg-card);
+    padding: 1.5rem;
+    border: 1px solid var(--terminal-border);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--terminal-green), var(--terminal-cyan));
+    opacity: 0.6;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
+    border-color: var(--terminal-green);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.2),
+        inset 0 0 15px rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.skill-item:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 10px var(--terminal-green);
 }
 
 .skill-name {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-title3);
     font-weight: var(--fw-semibold);
     margin-bottom: 15px;
-    color: var(--warm-white);
+    color: var(--terminal-green-bright);
+    text-shadow: 0 0 8px var(--terminal-green);
+    position: relative;
+    padding-left: 1rem;
 }
 
+.skill-name::before {
+    content: '■ ';
+    color: var(--terminal-cyan);
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+}
+
+/* Terminal-style progress bar */
 .skill-bar {
     width: 100%;
-    height: 10px;
-    background: var(--umber-medium);
-    border-radius: 5px;
+    height: 20px;
+    background: var(--terminal-bg-primary);
+    border: 1px solid var(--terminal-border);
+    border-radius: 0;
     overflow: hidden;
     margin-bottom: 10px;
+    position: relative;
+    font-family: var(--font-primary);
+}
+
+.skill-bar::before {
+    content: '[';
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--terminal-gray);
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+.skill-bar::after {
+    content: ']';
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--terminal-gray);
+    font-size: 0.9rem;
+    z-index: 10;
 }
 
 .skill-progress {
     height: 100%;
-    background: var(--gradient-warm);
-    border-radius: 5px;
-    transition: width 1s ease-in-out;
+    background: linear-gradient(90deg, var(--terminal-green), var(--terminal-green-bright));
+    border-radius: 0;
+    transition: width 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Terminal loading bar effect */
+.skill-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(90deg,
+            var(--terminal-green) 0px,
+            var(--terminal-green-bright) 2px,
+            var(--terminal-green) 4px
+        );
+    animation: loading 1s linear infinite;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    background: var(--terminal-green-bright);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 0px; }
+    100% { background-position: 20px; }
 }
 
 .skill-percentage {
     text-align: right;
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-medium);
-    color: var(--ochre);
+    font-size: var(--fs-subhead);
+    font-weight: var(--fw-bold);
+    color: var(--terminal-amber);
+    text-shadow: 0 0 5px var(--terminal-amber);
+    position: relative;
+    font-family: var(--font-primary);
+}
+
+.skill-percentage::before {
+    content: 'CPU: ';
+    color: var(--terminal-gray);
+    font-weight: normal;
+    margin-right: 0.3rem;
+}
+
+.skill-percentage::after {
+    content: '%';
+    color: var(--terminal-gray);
+    margin-left: 0.1rem;
+}
+
+/* Add some terminal-style decorations */
+.skill-item:nth-child(odd) {
+    border-left-color: var(--terminal-green);
+}
+
+.skill-item:nth-child(even) {
+    border-left-color: var(--terminal-cyan);
+}
+
+.skill-item:nth-child(3n) {
+    border-left-color: var(--terminal-amber);
 }
 
 @media (max-width: 768px) {
     .Skills {
-        padding: 60px 20px;
+        padding: 80px 20px;
+    }
+    
+    .skills-container::before {
+        font-size: 0.75rem;
+        padding: 0.8rem;
+    }
+    
+    .Skills .title::before {
+        font-size: 0.6em;
+        top: -1.8rem;
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
     
     .skill-item {
-        padding: 20px;
+        padding: 1.2rem;
+    }
+    
+    .skill-bar {
+        height: 18px;
+    }
+    
+    .skill-bar::before,
+    .skill-bar::after {
+        font-size: 0.8rem;
     }
 }

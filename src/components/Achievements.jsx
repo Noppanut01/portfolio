@@ -1,74 +1,24 @@
 function Achievements() {
     const achievements = [
         {
-            category: "Academic Awards",
-            items: [
-                {
-                    title: "Dean's List",
-                    description: "Achieved Dean's List recognition for 4 consecutive semesters",
-                    date: "2022-2024",
-                    icon: "🎓"
-                },
-                {
-                    title: "Outstanding Student Award",
-                    description: "Recognized for academic excellence in Computer Engineering",
-                    date: "2023",
-                    icon: "🏆"
-                },
-                {
-                    title: "Best Final Project",
-                    description: "AI-powered web application for student management",
-                    date: "2024",
-                    icon: "💡"
-                }
-            ]
-        },
-        {
-            category: "Certifications",
-            items: [
-                {
-                    title: "AWS Cloud Practitioner",
-                    description: "Amazon Web Services Cloud Practitioner Certification",
-                    date: "2024",
-                    icon: "☁️",
-                    credential: "Certificate ID: PLACEHOLDER123"
-                },
-                {
-                    title: "Google Analytics Certified",
-                    description: "Google Analytics Individual Qualification",
-                    date: "2023",
-                    icon: "📊",
-                    credential: "Certificate ID: PLACEHOLDER456"
-                },
-                {
-                    title: "React Developer Certificate",
-                    description: "Meta React Developer Professional Certificate",
-                    date: "2023",
-                    icon: "⚛️",
-                    credential: "Certificate ID: PLACEHOLDER789"
-                }
-            ]
-        },
-        {
             category: "Competitions & Hackathons",
             items: [
                 {
-                    title: "University Hackathon Winner",
-                    description: "1st place in 48-hour coding competition with AI solution",
+                    title: "Hackathon Achievement",
+                    description: "Participated in hackathon competition and developed innovative solution",
                     date: "2024",
-                    icon: "🥇"
-                },
+                    icon: "🏆"
+                }
+            ]
+        },
+        {
+            category: "Professional Experience",
+            items: [
                 {
-                    title: "Regional Programming Contest",
-                    description: "Top 10 finish in ACM-ICPC regional programming contest",
-                    date: "2023",
-                    icon: "💻"
-                },
-                {
-                    title: "Innovation Challenge Finalist",
-                    description: "Finalist in national student innovation challenge",
-                    date: "2023",
-                    icon: "🚀"
+                    title: "International Internship - France",
+                    description: "Successfully completed software development internship in France, gaining international work experience",
+                    date: "2024",
+                    icon: "🇫🇷"
                 }
             ]
         }

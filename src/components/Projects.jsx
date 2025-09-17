@@ -1,28 +1,44 @@
 function Projects() {
     const projects = [
         {
-            title: "E-commerce Website",
-            description: "A modern e-commerce platform built with React and Node.js featuring user authentication, payment integration, and admin dashboard.",
-            technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-            image: "https://via.placeholder.com/400x250",
+            title: "RAG Chatbot LLM",
+            description: "Advanced AI chatbot using Retrieval-Augmented Generation with Llama 3.2 model, demonstrating machine learning and natural language processing capabilities.",
+            technologies: ["Python", "LLM", "RAG", "AI"],
+            image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
             liveLink: "#",
-            githubLink: "#"
+            githubLink: "https://github.com/Noppanut01/RagChatbotLLM"
         },
         {
-            title: "Task Management App",
-            description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-            technologies: ["React", "Firebase", "Material-UI"],
-            image: "https://via.placeholder.com/400x250",
+            title: "Netflix Clone",
+            description: "Full-featured Netflix clone mobile application built with Flutter, featuring user authentication, video streaming interface, and responsive design.",
+            technologies: ["Dart", "Flutter", "Mobile App"],
+            image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
             liveLink: "#",
-            githubLink: "#"
+            githubLink: "https://github.com/Noppanut01/Netflix_clone"
         },
         {
-            title: "Weather Dashboard",
-            description: "A responsive weather application that provides current weather information and forecasts using third-party APIs.",
-            technologies: ["JavaScript", "CSS", "OpenWeather API"],
-            image: "https://via.placeholder.com/400x250",
+            title: "Vacuum Robot Simulator",
+            description: "TypeScript-based simulation of a vacuum robot navigating through rooms, featuring pathfinding algorithms and real-time visualization.",
+            technologies: ["TypeScript", "JavaScript", "Simulation"],
+            image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
             liveLink: "#",
-            githubLink: "#"
+            githubLink: "https://github.com/Noppanut01/vacuum-robot-simulator"
+        },
+        {
+            title: "Software Engineering Mobile App",
+            description: "Comprehensive mobile application project developed as part of software engineering coursework, showcasing full development lifecycle.",
+            technologies: ["Python", "Mobile Development", "SE Practices"],
+            image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+            liveLink: "#",
+            githubLink: "https://github.com/Noppanut01/se-project"
+        },
+        {
+            title: "Portfolio Website",
+            description: "Personal portfolio website showcasing projects, skills, and experience with modern web technologies and responsive design.",
+            technologies: ["CSS", "HTML", "JavaScript", "React"],
+            image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+            liveLink: "#",
+            githubLink: "https://github.com/Noppanut01/portfolio"
         }
     ];
 
