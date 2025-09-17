@@ -1,241 +1,93 @@
 .Achievements {
-    padding: 100px 20px;
-    background: var(--mac-window-bg);
-    color: var(--mac-white);
-    font-family: var(--font-primary);
-    font-size: 12px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Mac CRT scan lines effect */
-.Achievements::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(255, 255, 255, 0.03) 2px,
-            rgba(255, 255, 255, 0.03) 4px
-        );
-    pointer-events: none;
-    z-index: 1;
-    animation: scanlines 0.1s linear infinite;
-}
-
-@keyframes scanlines {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(4px); }
+    padding: var(--space-24) var(--space-6);
+    background-color: var(--bg-secondary);
 }
 
 .achievements-container {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
 }
 
-/* Mac terminal achievement system */
 .achievements-container::before {
-    content: 'localhost:achievements user$ cat trophy_list.txt | grep -E "(completed|unlocked)"';
+    content: 'ls -la /achievements/';
     display: block;
-    color: var(--mac-blue);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: var(--mac-terminal-bg);
-    border: 1px solid var(--mac-window-frame);
-    border-radius: 6px;
-    font-weight: 500;
+    color: var(--terminal-green);
+    font-size: var(--fs-base);
+    margin-bottom: var(--space-6);
     font-family: var(--font-primary);
 }
 
 .Achievements .title {
-    font-size: var(--fs-large-title);
+    font-size: var(--fs-4xl);
     font-weight: var(--fw-bold);
     text-align: center;
-    margin-bottom: 60px;
-    color: var(--mac-green-bright);
-    font-family: var(--font-secondary);
-    letter-spacing: var(--ls-tight);
-    text-shadow: 0 0 15px var(--mac-green);
-    position: relative;
-}
-
-.Achievements .title::before {
-    content: '🏆 ACHIEVEMENT UNLOCKED ';
-    position: absolute;
-    top: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.4em;
-    color: var(--mac-amber);
-    font-weight: normal;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px var(--mac-amber);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-.Achievements .title::after {
-    content: '_';
-    animation: blink 1.7s infinite;
-    font-weight: normal;
-}
-
-@keyframes glow {
-    0% { text-shadow: 0 0 10px var(--mac-amber); }
-    100% { text-shadow: 0 0 20px var(--mac-amber), 0 0 30px var(--mac-amber); }
+    margin-bottom: var(--space-16);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
 }
 
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px;
-    margin-bottom: 60px;
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
 }
 
 .category-section {
-    background: var(--mac-window-bg);
-    border-radius: 4px;
-    padding: 2rem;
-    border: 1px solid var(--mac-window-frame);
-    transition: all 0.3s ease;
-    box-shadow:
-        inset 0 0 20px rgba(0, 255, 0, 0.05),
-        0 0 10px rgba(0, 255, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.category-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--mac-green), var(--mac-blue), var(--mac-amber));
-    background-size: 200% 100%;
-    animation: categoryBorder 3s linear infinite;
-}
-
-@keyframes categoryBorder {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 200% 0%; }
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    border: 1px solid var(--border-primary);
+    transition: all var(--transition-normal);
 }
 
 .category-section:hover {
-    border-color: var(--mac-green);
-    box-shadow:
-        inset 0 0 25px rgba(0, 255, 0, 0.1),
-        0 0 25px rgba(0, 255, 0, 0.2);
-    transform: translateY(-3px) scale(1.02);
+    border-color: var(--border-secondary);
+    transform: translateY(-2px);
 }
 
 .category-title {
-    font-size: var(--fs-title2);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
-    color: var(--mac-green-bright);
-    font-family: var(--font-secondary);
+    color: var(--text-primary);
     text-align: center;
-    margin-bottom: 30px;
-    letter-spacing: var(--ls-normal);
-    text-shadow: 0 0 10px var(--mac-green);
-    position: relative;
-    margin-top: 1rem;
-}
-
-.category-title::before {
-    content: '[';
-    color: var(--mac-blue);
-    margin-right: 0.5rem;
-}
-
-.category-title::after {
-    content: ']';
-    color: var(--mac-blue);
-    margin-left: 0.5rem;
+    margin-bottom: var(--space-8);
+    font-family: var(--font-primary);
 }
 
 .achievements-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: var(--space-6);
 }
 
 .achievement-card {
     display: flex;
-    gap: 20px;
-    background: var(--mac-terminal-bg);
-    padding: 1.5rem;
-    border-radius: 4px;
-    border: 1px solid var(--mac-window-frame);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.achievement-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--mac-amber), var(--mac-green));
-    opacity: 0.6;
+    gap: var(--space-4);
+    background-color: var(--bg-primary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-primary);
+    transition: all var(--transition-normal);
 }
 
 .achievement-card:hover {
-    background: var(--mac-window-bg);
-    border-color: var(--mac-green);
-    box-shadow:
-        0 0 15px rgba(0, 255, 0, 0.2),
-        inset 0 0 15px rgba(0, 255, 0, 0.05);
-    transform: translateX(8px) translateY(-2px);
-}
-
-.achievement-card:hover::before {
-    opacity: 1;
-    box-shadow: 0 0 10px var(--mac-amber);
+    background-color: var(--bg-secondary);
+    border-color: var(--border-secondary);
+    transform: translateX(4px);
 }
 
 .achievement-icon {
-    font-size: var(--fs-title1);
+    font-size: var(--fs-2xl);
     width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--mac-green), var(--mac-blue));
+    background-color: var(--bg-card);
     border-radius: 50%;
     flex-shrink: 0;
-    color: var(--mac-terminal-bg);
-    border: 2px solid var(--mac-green-bright);
-    box-shadow:
-        0 0 20px rgba(0, 255, 0, 0.4),
-        inset 0 0 10px rgba(0, 255, 0, 0.2);
-    position: relative;
-    animation: iconPulse 3s ease-in-out infinite;
-}
-
-@keyframes iconPulse {
-    0%, 100% {
-        box-shadow:
-            0 0 20px rgba(0, 255, 0, 0.4),
-            inset 0 0 10px rgba(0, 255, 0, 0.2);
-    }
-    50% {
-        box-shadow:
-            0 0 30px rgba(0, 255, 0, 0.6),
-            inset 0 0 15px rgba(0, 255, 0, 0.3);
-    }
+    border: 1px solid var(--border-primary);
 }
 
 .achievement-content {
@@ -246,180 +98,121 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
-    gap: 15px;
+    margin-bottom: var(--space-3);
+    gap: var(--space-4);
 }
 
 .achievement-title {
-    font-size: var(--fs-headline);
+    font-size: var(--fs-lg);
     font-weight: var(--fw-semibold);
-    color: var(--mac-green-bright);
+    color: var(--text-primary);
     margin: 0;
     line-height: var(--lh-tight);
-    text-shadow: 0 0 8px var(--mac-green);
-    position: relative;
-}
-
-.achievement-title::before {
-    content: '✓ ';
-    color: var(--mac-green);
-    margin-right: 0.5rem;
-    font-weight: bold;
+    font-family: var(--font-primary);
 }
 
 .achievement-date {
-    font-size: var(--fs-subhead);
-    color: var(--mac-amber);
+    font-size: var(--fs-base);
+    color: var(--terminal-green);
     font-weight: var(--fw-medium);
-    background: transparent;
-    border: 1px solid var(--mac-amber);
-    padding: 4px 8px;
-    border-radius: 2px;
+    background-color: transparent;
+    border: 1px solid var(--terminal-green);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
     white-space: nowrap;
-    text-shadow: 0 0 5px var(--mac-amber);
-    transition: all 0.2s ease;
+    font-family: var(--font-primary);
 }
 
 .achievement-date:hover {
-    background: var(--mac-amber);
-    color: var(--mac-terminal-bg);
-    box-shadow: 0 0 10px rgba(255, 191, 0, 0.4);
+    background-color: var(--terminal-green);
+    color: var(--bg-primary);
 }
 
 .achievement-description {
-    font-size: var(--fs-callout);
-    color: var(--mac-white);
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
     line-height: var(--lh-normal);
-    margin-bottom: 10px;
-    opacity: 0.9;
-}
-
-.achievement-description::before {
-    content: '> ';
-    color: var(--terminal-gray);
-    margin-right: 0.5rem;
-    font-weight: bold;
+    margin-bottom: var(--space-3);
+    font-family: var(--font-primary);
 }
 
 .credential-info {
-    margin-top: 10px;
+    margin-top: var(--space-3);
 }
 
 .credential-info small {
-    font-size: var(--fs-footnote);
-    color: var(--mac-blue);
+    font-size: var(--fs-sm);
+    color: var(--terminal-blue);
     font-style: italic;
-    background: var(--mac-window-bg);
-    padding: 4px 8px;
-    border: 1px solid var(--mac-window-frame);
-    border-radius: 2px;
-    text-shadow: 0 0 3px var(--mac-blue);
-}
-
-.credential-info small::before {
-    content: 'ID: ';
-    color: var(--terminal-gray);
-    font-style: normal;
-    margin-right: 0.3rem;
+    background-color: var(--bg-card);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
 }
 
 .credentials-note {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
 }
 
 .note-card {
-    background: var(--mac-window-bg);
-    padding: 2.5rem;
-    border-radius: 4px;
+    background-color: var(--bg-card);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
     text-align: center;
     max-width: 600px;
-    color: var(--mac-white);
-    box-shadow:
-        0 0 20px rgba(0, 255, 0, 0.1),
-        inset 0 0 20px rgba(0, 255, 0, 0.05);
-    border: 1px solid var(--mac-window-frame);
-    position: relative;
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .note-card::before {
-    content: 'localhost:credentials user$ echo "verification_status"';
-    position: absolute;
-    top: -35px;
-    left: 0;
-    right: 0;
-    color: var(--mac-blue);
-    font-size: 0.8rem;
-    background: var(--mac-terminal-bg);
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--mac-window-frame);
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
+    content: 'cat verification.txt';
+    color: var(--terminal-green);
+    font-size: var(--fs-base);
+    display: block;
+    margin-bottom: var(--space-4);
+    font-family: var(--font-primary);
 }
 
 .note-card h3 {
-    font-size: var(--fs-title2);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
-    margin-bottom: 15px;
-    font-family: var(--font-secondary);
-    color: var(--mac-green-bright);
-    text-shadow: 0 0 10px var(--mac-green);
-    position: relative;
-}
-
-.note-card h3::before {
-    content: '🔒 ';
-    filter: sepia(1) hue-rotate(90deg);
-    margin-right: 0.5rem;
+    margin-bottom: var(--space-4);
+    font-family: var(--font-primary);
+    color: var(--text-primary);
 }
 
 .note-card p {
-    font-size: var(--fs-callout);
+    font-size: var(--fs-base);
     line-height: var(--lh-relaxed);
-    opacity: 0.95;
-    color: var(--mac-white);
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
 }
 
-.note-card p::before {
-    content: '> ';
-    color: var(--terminal-gray);
-    margin-right: 0.5rem;
-    font-weight: bold;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
     .Achievements {
-        padding: 80px 20px;
-    }
-
-    .achievements-container::before {
-        font-size: 0.75rem;
-        padding: 0.8rem;
-    }
-
-    .Achievements .title::before {
-        font-size: 0.35em;
-        top: -1.8rem;
+        padding: var(--space-16) var(--space-4);
     }
 
     .achievements-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: var(--space-6);
     }
 
     .category-section {
-        padding: 1.5rem;
+        padding: var(--space-6);
     }
 
     .achievement-card {
-        padding: 1.2rem;
-        gap: 15px;
+        padding: var(--space-4);
+        gap: var(--space-3);
     }
 
     .achievement-header {
         flex-direction: column;
-        gap: 8px;
+        gap: var(--space-2);
     }
 
     .achievement-date {
@@ -429,17 +222,10 @@
     .achievement-icon {
         width: 50px;
         height: 50px;
-        font-size: var(--fs-title2);
+        font-size: var(--fs-xl);
     }
 
     .note-card {
-        padding: 2rem 1.5rem;
-        margin-top: 40px;
-    }
-
-    .note-card::before {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.8rem;
-        top: -30px;
+        padding: var(--space-6);
     }
 }

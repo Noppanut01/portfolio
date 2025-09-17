@@ -59,7 +59,7 @@ function Hero() {
                 </div>
 
                 <h1 className="hero-title">
-                    Hi, I'm Noppanut Maiparot
+                    Hi, I'm Noppanut Maiprot
                 </h1>
 
                 <h2 className="hero-subtitle">

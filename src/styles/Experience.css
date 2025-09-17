@@ -1,310 +1,157 @@
 .Experience {
-    padding: 100px 20px;
-    background: var(--mac-terminal-bg);
-    color: var(--mac-white);
-    font-family: var(--font-primary);
-    position: relative;
-    overflow: hidden;
-    font-size: 12px;
-}
-
-/* Mac CRT phosphor effect */
-.Experience::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.2) 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes loadingPattern {
-    0% { background-position: 0 0; }
-    100% { background-position: 30px 30px; }
+    padding: var(--space-24) var(--space-6);
+    background-color: var(--bg-primary);
 }
 
 .experience-container {
     max-width: 1000px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
 }
 
-/* Terminal git log command */
 .experience-container::before {
-    content: 'user@portfolio:~/career$ git log --oneline --graph';
+    content: 'cat /home/noppanut/experience.txt';
     display: block;
-    color: var(--terminal-cyan);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: var(--terminal-bg-card);
-    border: 1px solid var(--terminal-border);
-    border-radius: 6px;
-    font-weight: 500;
+    color: var(--terminal-green);
+    font-size: var(--fs-base);
+    margin-bottom: var(--space-6);
     font-family: var(--font-primary);
 }
 
 .Experience .title {
-    font-size: var(--fs-large-title);
+    font-size: var(--fs-4xl);
     font-weight: var(--fw-bold);
     text-align: center;
-    margin-bottom: 60px;
-    color: var(--terminal-green-bright);
-    font-family: var(--font-secondary);
-    letter-spacing: var(--ls-tight);
-    text-shadow: 0 0 15px var(--terminal-green);
-    position: relative;
-}
-
-.Experience .title::after {
-    content: '_';
-    animation: blink 1.6s infinite;
-    font-weight: normal;
+    margin-bottom: var(--space-16);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
 }
 
 .timeline {
     position: relative;
-    padding-left: 30px;
+    padding-left: var(--space-8);
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 15px;
+    left: var(--space-4);
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--terminal-green), var(--terminal-cyan), var(--terminal-amber));
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-    border-radius: 2px;
+    width: 2px;
+    background-color: var(--border-primary);
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: var(--space-12);
 }
 
 .timeline-marker {
     position: absolute;
-    left: -24px;
-    top: 20px;
-    width: 18px;
-    height: 18px;
+    left: -30px;
+    top: var(--space-4);
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: var(--terminal-green-bright);
-    border: 3px solid var(--terminal-bg-primary);
+    background-color: var(--terminal-green);
+    border: 2px solid var(--bg-primary);
     z-index: 10;
-    box-shadow: 
-        0 0 15px rgba(0, 255, 0, 0.6),
-        inset 0 0 5px rgba(0, 255, 0, 0.3);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { 
-        box-shadow: 
-            0 0 15px rgba(0, 255, 0, 0.6),
-            inset 0 0 5px rgba(0, 255, 0, 0.3);
-    }
-    50% { 
-        box-shadow: 
-            0 0 25px rgba(0, 255, 0, 0.9),
-            inset 0 0 8px rgba(0, 255, 0, 0.5);
-    }
 }
 
 .experience-card {
-    background: var(--terminal-bg-card);
-    border-radius: 4px;
-    padding: 2rem;
-    margin-left: 30px;
-    box-shadow: 
-        inset 0 0 20px rgba(0, 255, 0, 0.05),
-        0 0 10px rgba(0, 255, 0, 0.1);
-    border: 1px solid var(--terminal-border);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.experience-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--terminal-cyan), var(--terminal-green));
-    opacity: 0.7;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin-left: var(--space-6);
+    border: 1px solid var(--border-primary);
+    transition: all var(--transition-normal);
 }
 
 .experience-card:hover {
-    border-color: var(--terminal-green);
-    box-shadow: 
-        inset 0 0 25px rgba(0, 255, 0, 0.1),
-        0 0 25px rgba(0, 255, 0, 0.2);
-    transform: translateY(-3px) translateX(5px);
-}
-
-.experience-card:hover::before {
-    opacity: 1;
-    box-shadow: 0 0 15px var(--terminal-green);
+    border-color: var(--border-secondary);
+    transform: translateY(-2px);
 }
 
 .experience-header {
-    margin-bottom: 25px;
+    margin-bottom: var(--space-6);
 }
 
 .job-title {
-    font-size: var(--fs-title2);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-semibold);
-    color: var(--terminal-green-bright);
-    font-family: var(--font-secondary);
-    margin-bottom: 8px;
-    text-shadow: 0 0 8px var(--terminal-green);
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.job-title::before {
-    content: '💼 ';
-    position: absolute;
-    left: 0;
-    filter: sepia(1) hue-rotate(90deg);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    font-family: var(--font-primary);
 }
 
 .company-name {
-    font-size: var(--fs-headline);
-    color: var(--terminal-cyan);
+    font-size: var(--fs-lg);
+    color: var(--terminal-blue);
     font-weight: var(--fw-medium);
-    margin-bottom: 12px;
-}
-
-.company-name::before {
-    content: '@ ';
-    color: var(--terminal-amber);
-    margin-right: 0.3rem;
+    margin-bottom: var(--space-3);
+    font-family: var(--font-primary);
 }
 
 .job-details {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: var(--space-4);
     align-items: center;
 }
 
 .period {
-    font-size: var(--fs-callout);
-    color: var(--terminal-gray);
-    font-weight: var(--fw-regular);
-}
-
-.period::before {
-    content: '📅 ';
-    margin-right: 0.3rem;
-    filter: sepia(1) hue-rotate(90deg);
+    font-size: var(--fs-base);
+    color: var(--text-muted);
+    font-family: var(--font-primary);
 }
 
 .location {
-    font-size: var(--fs-callout);
-    color: var(--terminal-gray);
-    font-weight: var(--fw-regular);
-}
-
-.location::before {
-    content: '📍 ';
-    margin-right: 0.3rem;
-    filter: sepia(1) hue-rotate(90deg);
+    font-size: var(--fs-base);
+    color: var(--text-muted);
+    font-family: var(--font-primary);
 }
 
 .job-type {
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: var(--fs-footnote);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-family: var(--font-primary);
 }
 
 .job-type.internship {
-    background: transparent;
-    border: 1px solid var(--terminal-cyan);
-    color: var(--terminal-cyan);
-}
-
-.job-type.freelance {
-    background: transparent;
-    border: 1px solid var(--terminal-amber);
-    color: var(--terminal-amber);
-}
-
-.job-type.part-time {
-    background: transparent;
-    border: 1px solid var(--terminal-green);
-    color: var(--terminal-green);
-}
-
-.job-type {
-    border-radius: 2px;
-    transition: all 0.2s ease;
+    background-color: transparent;
+    border: 1px solid var(--terminal-blue);
+    color: var(--terminal-blue);
 }
 
 .job-type:hover {
-    background: currentColor;
-    color: var(--terminal-bg-primary);
-    box-shadow: 0 0 10px currentColor;
+    background-color: var(--terminal-blue);
+    color: var(--bg-primary);
 }
 
 .job-description {
-    margin-bottom: 25px;
+    margin-bottom: var(--space-6);
 }
 
 .job-description p {
-    font-size: var(--fs-callout);
+    font-size: var(--fs-base);
     line-height: var(--lh-relaxed);
-    color: var(--terminal-white);
-    opacity: 0.9;
-}
-
-.job-description p::before {
-    content: '# ';
-    color: var(--terminal-gray);
-    margin-right: 0.5rem;
-    font-weight: bold;
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
 }
 
 .achievements {
-    margin-bottom: 25px;
+    margin-bottom: var(--space-6);
 }
 
 .achievements h4,
 .experience-technologies h4 {
-    font-size: var(--fs-headline);
+    font-size: var(--fs-lg);
     font-weight: var(--fw-semibold);
-    color: var(--terminal-green-bright);
-    margin-bottom: 15px;
-    text-shadow: 0 0 5px var(--terminal-green);
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.achievements h4::before {
-    content: '🏆 ';
-    position: absolute;
-    left: 0;
-    filter: sepia(1) hue-rotate(90deg);
-}
-
-.experience-technologies h4::before {
-    content: '⚙️ ';
-    position: absolute;
-    left: 0;
-    filter: sepia(1) hue-rotate(90deg);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-primary);
 }
 
 .achievements ul {
@@ -313,83 +160,75 @@
 }
 
 .achievements li {
-    font-size: var(--fs-callout);
-    color: var(--terminal-white);
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
     line-height: var(--lh-normal);
-    margin-bottom: 8px;
+    margin-bottom: var(--space-2);
     position: relative;
-    padding-left: 25px;
-    opacity: 0.9;
+    padding-left: var(--space-4);
+    font-family: var(--font-primary);
 }
 
 .achievements li::before {
-    content: '> ';
+    content: '- ';
     color: var(--terminal-green);
     font-weight: bold;
     position: absolute;
     left: 0;
-    font-family: var(--font-primary);
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--space-2);
 }
 
 .tech-tag {
-    background: transparent;
-    color: var(--terminal-amber);
-    border: 1px solid var(--terminal-border);
-    padding: 4px 10px;
-    border-radius: 2px;
-    font-size: var(--fs-footnote);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
-    transition: all 0.2s ease;
-    text-transform: lowercase;
+    transition: all var(--transition-normal);
+    font-family: var(--font-primary);
 }
 
 .tech-tag:hover {
-    border-color: var(--terminal-amber);
-    background: var(--terminal-amber);
-    color: var(--terminal-bg-primary);
-    box-shadow: 0 0 8px rgba(255, 191, 0, 0.3);
+    border-color: var(--text-primary);
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .Experience {
-        padding: 80px 20px;
+        padding: var(--space-16) var(--space-4);
     }
-    
-    .experience-container::before {
-        font-size: 0.75rem;
-        padding: 0.8rem;
-    }
-    
+
     .timeline {
-        padding-left: 20px;
+        padding-left: var(--space-6);
     }
-    
+
     .timeline::before {
-        left: 10px;
-        width: 2px;
+        left: var(--space-3);
     }
-    
+
     .timeline-marker {
-        left: -19px;
-        width: 14px;
-        height: 14px;
+        left: -24px;
+        width: 10px;
+        height: 10px;
     }
-    
+
     .experience-card {
-        margin-left: 20px;
-        padding: 1.5rem;
+        margin-left: var(--space-4);
+        padding: var(--space-6);
     }
-    
+
     .job-details {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: var(--space-2);
     }
-    
-    .job-title::before,\n    .achievements h4::before,\n    .experience-technologies h4::before {\n        font-size: 0.8em;\n    }\n}
+}

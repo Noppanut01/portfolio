@@ -1,7 +1,7 @@
 function About() {
     const skills = [
         'JavaScript', 'React', 'Python', 'Flutter',
-        'Node.js', 'AI/ML', 'Git', 'MongoDB'
+        'Node.js', 'AI/ML', 'Git', 'Postgresql', 'Java'
     ];
 
     return (
@@ -10,7 +10,7 @@ function About() {
                 <div className="profile-section">
                     <div className="profile-image">
                         <div className="profile-placeholder">
-                            <span>NM</span>
+                            <img src="src/assets/images/me.jpg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -30,11 +30,11 @@ function About() {
                         </div>
                         <div className="stat-item">
                             <span className="stat-number">15+</span>
-                            <span className="stat-label">Projects</span>
+                            <span className="stat-label">Repository on github</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-number">2+</span>
-                            <span className="stat-label">Years Experience</span>
+                            <span className="stat-number">2</span>
+                            <span className="stat-label">Months Experience</span>
                         </div>
                     </div>
 

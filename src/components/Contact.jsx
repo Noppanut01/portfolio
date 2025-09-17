@@ -14,6 +14,16 @@ function Contact() {
         });
     };
 
+    const handleDownload = (pdf) => {
+        const pdfUrl = pdf;
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "your file name.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
@@ -29,20 +39,19 @@ function Contact() {
                     <div className="contact-info">
                         <div className="contact-item">
                             <h3>Email</h3>
-                            <p>your.email@example.com</p>
+                            <p>noppanut.jang2547@gmail.com</p>
                         </div>
                         <div className="contact-item">
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p>098-484-9828</p>
                         </div>
                         <div className="contact-item">
                             <h3>Location</h3>
-                            <p>Your City, Country</p>
+                            <p>117 ซ.พิบูลย์สงคราม 22 นนทบุรี 11000</p>
                         </div>
                         <div className="social-links">
-                            <a href="#" className="social-link">LinkedIn</a>
-                            <a href="#" className="social-link">GitHub</a>
-                            <a href="#" className="social-link">Twitter</a>
+                            <a href="https://www.instagram.com/noppanut_o/" className="social-link">Instagram</a>
+                            <a href="https://github.com/Noppanut01" className="social-link">GitHub</a>
                         </div>
                         <div className="resume-section">
                             <h3>Resume & Portfolio</h3>
