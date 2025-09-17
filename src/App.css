@@ -1,231 +1,453 @@
-/* Retro Macintosh Terminal Theme - Portfolio */
+/* Modern Clean Portfolio Theme */
 :root {
-  /* Retro Mac Terminal Background Colors */
-  --mac-terminal-bg: #000000;
-  --mac-window-bg: #1a1a1a;
-  --mac-titlebar-bg: #3c3c3c;
-  --mac-content-bg: #000000;
+  /* Clean Color Palette */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: #111111;
+  --bg-elevated: #1a1a1a;
 
-  /* Retro Mac Terminal Text Colors */
-  --mac-green: #00ff00;
-  --mac-green-bright: #40ff40;
-  --mac-amber: #ffcc00;
-  --mac-white: #ffffff;
-  --mac-gray: #c0c0c0;
-  --mac-gray-dark: #808080;
-  --mac-red: #ff4040;
-  --mac-blue: #4080ff;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --text-accent: #666666;
 
-  /* Classic Mac System Colors */
-  --mac-window-frame: #808080;
-  --mac-button-red: #ff6058;
-  --mac-button-yellow: #ffbd2e;
-  --mac-button-green: #28ca42;
+  --border-primary: #333333;
+  --border-secondary: #444444;
+  --border-subtle: #222222;
 
-  /* Terminal Borders */
-  --terminal-border: #808080;
-  --terminal-border-bright: #c0c0c0;
-  
-  /* GitHub Gradients */
-  --gradient-github: linear-gradient(135deg, var(--github-canvas-default) 0%, var(--github-canvas-subtle) 100%);
+  --accent-primary: #ffffff;
+  --accent-hover: #f0f0f0;
 
-  /* Retro Mac Typography */
-  --font-primary: 'Monaco', 'Menlo', 'Courier New', monospace;
-  --font-secondary: 'Monaco', 'Menlo', 'Courier New', monospace;
-  --font-mono: 'Monaco', 'Menlo', 'Courier New', monospace;
-  --font-system: 'Chicago', 'Helvetica', 'Arial', sans-serif;
+  /* Terminal-inspired accents */
+  --terminal-green: #00ff00;
+  --terminal-blue: #0080ff;
+  --terminal-yellow: #ffff00;
 
-  /* Font Weights - Apple Typography Scale */
-  --fw-ultralight: 100;
-  --fw-thin: 200;
+  /* Typography */
+  --font-primary: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
+  --font-secondary: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
+
+  /* Font Weights */
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
-  --fw-heavy: 800;
-  --fw-black: 900;
 
-  /* Font Sizes - Apple Typography Scale (Moderately increased for readability) */
-  --fs-caption: clamp(0.8125rem, 0.775rem + 0.1875vw, 0.9375rem);
-  --fs-footnote: clamp(0.9375rem, 0.875rem + 0.3125vw, 1.0625rem);
-  --fs-subhead: clamp(1rem, 0.9375rem + 0.3125vw, 1.125rem);
-  --fs-callout: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-  --fs-body: clamp(1.1875rem, 1.0625rem + 0.5875vw, 1.375rem);
-  --fs-headline: clamp(1.25rem, 1.125rem + 0.625vw, 1.5rem);
-  --fs-title3: clamp(1.4375rem, 1.3125rem + 0.625vw, 1.6875rem);
-  --fs-title2: clamp(1.625rem, 1.4375rem + 0.9375vw, 2rem);
-  --fs-title1: clamp(1.9375rem, 1.6875rem + 1.25vw, 2.5rem);
-  --fs-large-title: clamp(2.375rem, 2rem + 1.875vw, 3.75rem);
+  /* Improved Font Sizes - Consistently Larger */
+  --fs-xs: 1rem;
+  /* 16px */
+  --fs-sm: 1.125rem;
+  /* 18px */
+  --fs-base: 1.25rem;
+  /* 20px */
+  --fs-lg: 1.375rem;
+  /* 22px */
+  --fs-xl: 1.5rem;
+  /* 24px */
+  --fs-2xl: 1.875rem;
+  /* 30px */
+  --fs-3xl: 2.25rem;
+  /* 36px */
+  --fs-4xl: 3rem;
+  /* 48px */
+  --fs-5xl: 3.75rem;
+  /* 60px */
+  --fs-6xl: 4.5rem;
+  /* 72px */
 
-  /* Line Heights - Apple Standards */
-  --lh-tight: 1.08333;
-  --lh-normal: 1.29167;
-  --lh-relaxed: 1.38095;
+  /* Line Heights */
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
 
-  /* Letter Spacing - Apple Standards */
-  --ls-tight: -0.41px;
-  --ls-normal: 0px;
-  --ls-wide: 0.38px;
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Border Radius - More subtle */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 350ms ease-out;
 }
 
-
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Terminal Global Styles */
 html {
   scroll-behavior: smooth;
-  background: var(--mac-terminal-bg);
+  font-size: 16px;
 }
 
 body {
-  padding-top: 80px;
-  background: var(--mac-terminal-bg);
-  color: var(--mac-green);
   font-family: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  font-size: 12px;
-  line-height: 1.2;
-  animation: macStartup 2s ease-out;
 }
 
-/* Mac startup animation */
-@keyframes macStartup {
-  0% {
-    background: #ffffff;
-    opacity: 0;
-  }
-  20% {
-    background: #ffffff;
-    opacity: 1;
-  }
-  40% {
-    background: #cccccc;
-  }
-  60% {
-    background: #666666;
-  }
-  80% {
-    background: #333333;
-  }
-  100% {
-    background: var(--mac-terminal-bg);
-    opacity: 1;
-  }
-}
-
-/* Terminal cursor animation */
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-.terminal-cursor::after {
-  content: '█';
-  color: var(--mac-green-bright);
-  animation: blink 1s infinite;
-  font-weight: bold;
-}
-
-/* Retro Mac CRT monitor effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Classic Mac scan lines with CRT flicker */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 1px,
-    rgba(0, 255, 0, 0.03) 1px,
-    rgba(0, 255, 0, 0.03) 2px
-  );
-  z-index: -1;
-  pointer-events: none;
-  animation: crtFlicker 0.15s infinite linear alternate;
-}
-
-/* CRT monitor flicker effect */
-@keyframes crtFlicker {
-  0% { opacity: 1; }
-  98% { opacity: 1; }
-  99% { opacity: 0.98; }
-  100% { opacity: 1; }
-}
-
+/* Clean section styling */
 section {
   scroll-margin-top: 80px;
 }
 
-/* Mac terminal text glow effect */
-.mac-text-glow {
-  text-shadow:
-    0 0 5px var(--mac-green),
-    0 0 10px var(--mac-green),
-    0 0 15px var(--mac-green);
-  animation: macTextGlow 2s ease-in-out infinite alternate;
+/* Typography Classes */
+.text-primary {
+  color: var(--text-primary);
 }
 
-@keyframes macTextGlow {
-  0% {
-    text-shadow:
-      0 0 5px var(--mac-green),
-      0 0 10px var(--mac-green),
-      0 0 15px var(--mac-green);
-  }
-  100% {
-    text-shadow:
-      0 0 8px var(--mac-green-bright),
-      0 0 15px var(--mac-green-bright),
-      0 0 20px var(--mac-green-bright);
-  }
+.text-secondary {
+  color: var(--text-secondary);
 }
 
-/* Classic Mac window dragging effect */
-.mac-window-drag {
-  cursor: move;
-  user-select: none;
+.text-muted {
+  color: var(--text-muted);
 }
 
-/* Mac terminal boot sequence */
-@keyframes macBoot {
-  0% {
+.text-xs {
+  font-size: var(--fs-xs);
+}
+
+.text-sm {
+  font-size: var(--fs-sm);
+}
+
+.text-base {
+  font-size: var(--fs-base);
+}
+
+.text-lg {
+  font-size: var(--fs-lg);
+}
+
+.text-xl {
+  font-size: var(--fs-xl);
+}
+
+.text-2xl {
+  font-size: var(--fs-2xl);
+}
+
+.text-3xl {
+  font-size: var(--fs-3xl);
+}
+
+.text-4xl {
+  font-size: var(--fs-4xl);
+}
+
+.text-5xl {
+  font-size: var(--fs-5xl);
+}
+
+.font-light {
+  font-weight: var(--fw-light);
+}
+
+.font-regular {
+  font-weight: var(--fw-regular);
+}
+
+.font-medium {
+  font-weight: var(--fw-medium);
+}
+
+.font-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.font-bold {
+  font-weight: var(--fw-bold);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.section {
+  padding: var(--space-24) 0;
+}
+
+/* Terminal-inspired elements */
+.terminal-prompt::before {
+  content: '> ';
+  color: var(--terminal-green);
+  font-weight: bold;
+}
+
+.terminal-text {
+  font-family: var(--font-primary);
+  color: var(--terminal-green);
+}
+
+.code-block {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-family: var(--font-primary);
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  font-family: var(--font-primary);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border-color: var(--accent-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-primary);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--border-secondary);
+  transform: translateY(-2px);
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-responsive {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Spacing Utilities */
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.mb-12 {
+  margin-bottom: var(--space-12);
+}
+
+/* Simple animations - no glow effects */
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: translateY(10px);
   }
-  20% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.6;
-    transform: scale(0.9);
-  }
-  60% {
-    opacity: 0.8;
-    transform: scale(0.95);
-  }
-  100% {
+
+  to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Terminal cursor - no glow */
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--terminal-green);
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .text-5xl {
+    font-size: var(--fs-4xl);
+  }
+
+  .text-4xl {
+    font-size: var(--fs-3xl);
+  }
+
+  .text-3xl {
+    font-size: var(--fs-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .text-4xl {
+    font-size: var(--fs-2xl);
+  }
+
+  .text-3xl {
+    font-size: var(--fs-xl);
   }
 }

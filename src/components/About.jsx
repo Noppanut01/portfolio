@@ -1,34 +1,49 @@
 function About() {
+    const skills = [
+        'JavaScript', 'React', 'Python', 'Flutter',
+        'Node.js', 'AI/ML', 'Git', 'MongoDB'
+    ];
+
     return (
         <section id="about" className="About">
             <div className="about-container">
                 <div className="profile-section">
                     <div className="profile-image">
-                        <img src="https://via.placeholder.com/300x300/7d5e4f/ffffff?text=Your+Photo" alt="Noppanut Profile" />
+                        <div className="profile-placeholder">
+                            <span>NM</span>
+                        </div>
                     </div>
                 </div>
                 <div className="info-section">
-                    <div className="title">
-                        About Me
-                    </div>
-                    <div className="subtitle">Computer Engineering Student</div>
-                    <div className="desc">
-                        I'm a passionate Computer Engineering student with a keen interest in software development, 
-                        problem-solving, and creating innovative solutions. I enjoy working on both frontend and backend 
+                    <h2 className="title">About Me</h2>
+                    <h3 className="subtitle">Electronics Engineering Student & Developer</h3>
+                    <p className="desc">
+                        I'm a passionate Computer Engineering student with a keen interest in software development,
+                        problem-solving, and creating innovative solutions. I enjoy working on both frontend and backend
                         technologies, and I'm always eager to learn new skills and take on challenging projects.
-                    </div>
+                    </p>
+
                     <div className="highlight-stats">
                         <div className="stat-item">
-                            <div className="stat-number">3.8+</div>
-                            <div className="stat-label">GPA</div>
+                            <span className="stat-number">3.29</span>
+                            <span className="stat-label">GPA</span>
                         </div>
                         <div className="stat-item">
-                            <div className="stat-number">15+</div>
-                            <div className="stat-label">Projects</div>
+                            <span className="stat-number">15+</span>
+                            <span className="stat-label">Projects</span>
                         </div>
                         <div className="stat-item">
-                            <div className="stat-number">2+</div>
-                            <div className="stat-label">Years Experience</div>
+                            <span className="stat-number">2+</span>
+                            <span className="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+
+                    <div className="skills-preview">
+                        <h3>Core Technologies</h3>
+                        <div className="skills-tags">
+                            {skills.map((skill, index) => (
+                                <span key={index} className="skill-tag">{skill}</span>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -36,6 +51,5 @@ function About() {
         </section>
     )
 }
-
 
 export default About

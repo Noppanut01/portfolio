@@ -1,163 +1,114 @@
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem;
-    background: var(--mac-titlebar-bg);
-    background: linear-gradient(180deg, #505050 0%, #3c3c3c 100%);
-    border-bottom: 1px solid var(--mac-window-frame);
-    font-family: var(--font-primary);
+.Header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    font-size: 11px;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-primary);
 }
 
-/* Mac menu bar styling */
-.navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.navbar .nav-icon {
-    padding: 0.4rem 0.8rem;
-    position: relative;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--mac-white);
-    font-family: var(--font-system);
-    cursor: pointer;
+.navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-4) var(--space-6);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.navbar .nav-icon::before {
-    content: '● ';
-    color: var(--mac-green);
-    font-size: 8px;
-    animation: pulse 2s infinite;
+.nav-icon {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: color var(--transition-normal);
+    text-decoration: none;
+    font-family: var(--font-primary);
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+.nav-icon::before {
+    content: '~/';
+    color: var(--terminal-green);
+    margin-right: var(--space-2);
 }
 
-.navbar .nav-items {
+.nav-icon:hover {
+    color: var(--terminal-green);
+}
+
+.nav-items {
     display: flex;
-    flex-direction: row;
-    gap: 0.1rem;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.navbar .nav-items li {
+    gap: var(--space-8);
     list-style: none;
-    padding: 0.3rem 0.6rem;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    color: var(--text-secondary);
     cursor: pointer;
-    font-weight: normal;
-    color: var(--mac-gray);
-    font-size: 11px;
+    transition: color var(--transition-normal);
     position: relative;
-    border-radius: 2px;
-    font-family: var(--font-system);
+    font-family: var(--font-primary);
 }
 
-.navbar .nav-items li:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--mac-white);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+.nav-items li::before {
+    content: '[';
+    color: var(--terminal-blue);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
 }
 
-/* Active/current page styling */
-.navbar .nav-items li.active {
-    background: var(--mac-blue);
-    color: var(--mac-white);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+.nav-items li::after {
+    content: ']';
+    color: var(--terminal-blue);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
 }
 
-/* Terminal window controls in header */
-.navbar .terminal-controls {
-    display: flex;
-    gap: 0.3rem;
-    align-items: center;
+.nav-items li:hover {
+    color: var(--text-primary);
 }
 
-.navbar .terminal-control {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid var(--terminal-border);
-    opacity: 0.7;
+.nav-items li:hover::before,
+.nav-items li:hover::after {
+    opacity: 1;
 }
 
-.navbar .terminal-control.close { background: #ff6b6b; }
-.navbar .terminal-control.minimize { background: #feca57; }
-.navbar .terminal-control.maximize { background: #48dbfb; }
-
-@media (max-width: 1024px) {
-    .navbar {
-        padding: 0.6rem 1.5rem;
-    }
-    
-    .navbar .nav-items {
-        gap: 0.2rem;
-        padding: 0.3rem;
-    }
-    
-    .navbar .nav-items li {
-        padding: 0.4rem 0.6rem;
-        font-size: var(--fs-xs);
-    }
-    
-    .navbar .terminal-controls {
-        display: none;
-    }
-}
-
+/* Mobile Navigation */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0.8rem 1rem;
+        padding: var(--space-3) var(--space-4);
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: var(--space-4);
     }
-    
-    .navbar .nav-icon {
+
+    .nav-icon {
         font-size: var(--fs-lg);
     }
-    
-    .navbar .nav-items {
-        flex-wrap: wrap;
-        gap: 0.2rem;
+
+    .nav-items {
         width: 100%;
         justify-content: center;
-        padding: 0.3rem;
+        gap: var(--space-6);
+        flex-wrap: wrap;
     }
-    
-    .navbar .nav-items li {
-        padding: 0.3rem 0.5rem;
-        font-size: var(--fs-xs);
+
+    .nav-items li {
+        font-size: var(--fs-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-items {
+        gap: var(--space-4);
+    }
+
+    .nav-items li {
+        font-size: var(--fs-sm);
     }
 }
