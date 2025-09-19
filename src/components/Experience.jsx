@@ -1,9 +1,9 @@
 function Experience() {
     const experiences = [
         {
-            title: "Software Development Intern",
-            company: "Company Name",
-            period: "Jun 2024 - Aug 2024",
+            title: "Software Development Internship",
+            company: "University of Burgundy, Polytech Dijon",
+            period: "Apr 2025 - Jun 2025",
             type: "Internship",
             location: "France",
             description: "International internship experience developing software solutions. Gained valuable experience working in a multicultural environment and contributing to real-world projects.",
@@ -13,7 +13,7 @@ function Experience() {
                 "Collaborated with international team members",
                 "Adapted to new work culture and methodologies"
             ],
-            technologies: ["React", "Node.js", "JavaScript", "Git", "Professional Development"]
+            technologies: ["Node.js", "TypeScript", "Git"]
         }
     ];
 
@@ -37,11 +37,11 @@ function Experience() {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div className="job-description">
                                     <p>{exp.description}</p>
                                 </div>
-                                
+
                                 <div className="achievements">
                                     <h4>Key Achievements</h4>
                                     <ul>
@@ -50,7 +50,7 @@ function Experience() {
                                         ))}
                                     </ul>
                                 </div>
-                                
+
                                 <div className="experience-technologies">
                                     <h4>Technologies Used</h4>
                                     <div className="tech-tags">

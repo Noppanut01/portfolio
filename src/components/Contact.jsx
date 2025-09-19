@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { handleDownload } from "../services/Download";
 function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -12,16 +12,6 @@ function Contact() {
             ...formData,
             [e.target.name]: e.target.value
         });
-    };
-
-    const handleDownload = (pdf) => {
-        const pdfUrl = pdf;
-        const link = document.createElement("a");
-        link.href = pdfUrl;
-        link.download = "your file name.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
     };
 
     const handleSubmit = (e) => {
@@ -50,15 +40,15 @@ function Contact() {
                             <p>117 ซ.พิบูลย์สงคราม 22 นนทบุรี 11000</p>
                         </div>
                         <div className="social-links">
-                            <a href="https://www.instagram.com/noppanut_o/" className="social-link">Instagram</a>
-                            <a href="https://github.com/Noppanut01" className="social-link">GitHub</a>
+                            <a href="https://www.instagram.com/noppanut_o/" className="social-link" target="_blank">Instagram</a>
+                            <a href="https://github.com/Noppanut01" className="social-link" target="_blank">GitHub</a>
                         </div>
                         <div className="resume-section">
                             <h3>Resume & Portfolio</h3>
                             <p>Download my complete resume and portfolio</p>
                             <div className="resume-buttons">
-                                <button className="resume-btn primary">Download Resume (PDF)</button>
-                                <button className="resume-btn secondary">View Portfolio (PDF)</button>
+                                <button className="resume-btn primary" onClick={() => handleDownload("src/data/portfolio.pdf")}>Download Resume (PDF)</button>
+                                <button className="resume-btn secondary" onClick={() => handleDownload("src/data/transcipt.pdf")}>View Portfolio (PDF)</button>
                             </div>
                         </div>
                     </div>

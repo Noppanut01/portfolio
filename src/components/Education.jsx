@@ -6,25 +6,25 @@ function Education() {
             period: "2022 - 2026",
             gpa: "3.29/4.00",
             status: "Currently Studying",
-            courses: [
-                "Computer Programming",
-                "Object-Oriented Programming", 
-                "Data Structures & Algorithm Analysis",
-                "Database & Data Technology",
-                "Web Application Development",
-                "Software Engineering",
-                "Mobile Application Development",
-                "Machine Learning & Deep Learning",
-                "Artificial Intelligence",
-                "Computer Networks & Data Communication",
-                "Cybersecurity",
-                "Digital Image Processing",
-                "Operating Systems",
-                "Computer Architecture",
-                "Microcontroller Systems",
-                "Cloud Computing",
-                "Network Programming"
-            ]
+            // courses: [
+            //     "Computer Programming",
+            //     "Object-Oriented Programming",
+            //     "Data Structures & Algorithm Analysis",
+            //     "Database & Data Technology",
+            //     "Web Application Development",
+            //     "Software Engineering",
+            //     "Mobile Application Development",
+            //     "Machine Learning & Deep Learning",
+            //     "Artificial Intelligence",
+            //     "Computer Networks & Data Communication",
+            //     "Cybersecurity",
+            //     "Digital Image Processing",
+            //     "Operating Systems",
+            //     "Computer Architecture",
+            //     "Microcontroller Systems",
+            //     "Cloud Computing",
+            //     "Network Programming"
+            // ]
         }
     ];
 
@@ -47,24 +47,24 @@ function Education() {
                                     <div className="status">{edu.status}</div>
                                 </div>
                             </div>
-                            
-                            <div className="relevant-courses">
+
+                            {/* <div className="relevant-courses">
                                 <h4>Relevant Coursework</h4>
                                 <div className="courses-grid">
                                     {edu.courses.map((course, courseIndex) => (
                                         <span key={courseIndex} className="course-tag">{course}</span>
                                     ))}
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     ))}
                 </div>
-                
+
                 <div className="transcript-section">
                     <div className="transcript-card">
                         <h3>Academic Transcripts</h3>
                         <p>Official transcripts available upon request. Includes detailed course grades, credit hours, and academic honors.</p>
-                        <button className="transcript-btn">Request Transcript</button>
+                        <button className="transcript-btn">View Transcript</button>
                     </div>
                 </div>
             </div>

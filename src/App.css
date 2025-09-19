@@ -24,8 +24,8 @@
   --terminal-yellow: #ffff00;
 
   /* Typography */
-  --font-primary: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
-  --font-secondary: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
+  --font-primary: 'Hack Nerd Font', 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
+  --font-secondary: 'Hack Nerd Font', 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
 
   /* Font Weights */
   --fw-light: 300;

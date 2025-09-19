@@ -155,7 +155,7 @@
     transform: translateY(-1px);
 }
 
-.project-link:last-child {
+/* .project-link:last-child {
     background-color: transparent;
     color: var(--text-primary);
     border: 1px solid var(--border-primary);
@@ -165,7 +165,7 @@
     background-color: var(--bg-secondary);
     border-color: var(--text-primary);
     transform: translateY(-1px);
-}
+} */
 
 /* Featured Project */
 .project-card.featured {

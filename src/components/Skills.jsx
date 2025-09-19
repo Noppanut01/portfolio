@@ -24,9 +24,9 @@ function Skills() {
             { name: "FastAPI", icon: "src/assets/icon/fastapi.png", description: "Backend api" },
             { name: "Php", icon: "src/assets/icon/php.png", description: "Backend web application" }
         ],
-        "AI & Machine Learning": [
-            { name: "Machine Learning", icon: "src/assets/icon/ml-model.png", description: "Data analysis & modeling" },
-        ]
+        // "AI & Machine Learning": [
+        //     { name: "Machine Learning", icon: "src/assets/icon/ml-model.png", description: "Data analysis & modeling" },
+        // ]
     };
 
     return (

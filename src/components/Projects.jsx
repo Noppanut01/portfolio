@@ -3,7 +3,7 @@ function Projects() {
         {
             title: "RAG Chatbot LLM",
             description: "Advanced AI chatbot using Retrieval-Augmented Generation with Llama 3.2 model, demonstrating machine learning and natural language processing capabilities.",
-            technologies: ["Python", "LLM", "RAG", "AI"],
+            technologies: ["Python", "LLM", "RAG", "AI", "ReactJS"],
             icon: "🤖",
             liveLink: "#",
             githubLink: "https://github.com/Noppanut01/RagChatbotLLM",
@@ -20,7 +20,7 @@ function Projects() {
         {
             title: "Vacuum Robot Simulator",
             description: "TypeScript-based simulation of a vacuum robot navigating through rooms, featuring pathfinding algorithms and real-time visualization.",
-            technologies: ["TypeScript", "JavaScript", "Simulation"],
+            technologies: ["TypeScript"],
             icon: "🤖",
             liveLink: "#",
             githubLink: "https://github.com/Noppanut01/vacuum-robot-simulator"
@@ -75,14 +75,6 @@ function Projects() {
                                     ))}
                                 </div>
                                 <div className="project-links">
-                                    <a
-                                        href={project.liveLink}
-                                        className="project-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Live Demo
-                                    </a>
                                     <a
                                         href={project.githubLink}
                                         className="project-link"
