@@ -1,4 +1,10 @@
 import { motion } from "motion/react";
+
+const isVideoFile = (filename) => {
+  const videoExtensions = ['.mp4', '.webm', '.ogg', '.avi', '.mov', '.mkv'];
+  return videoExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+};
+
 const ProjectDetails = ({
   title,
   description,
@@ -17,11 +23,22 @@ const ProjectDetails = ({
       >
         <button
           onClick={closeModal}
-          className="absolute p-2 rounded-sm top-5 right-5 bg-midnight"
+          className="absolute p-2 rounded-sm top-5 right-5 bg-midnight z-10"
         >
           <img src="assets/close.svg" className="w-6 h-6" />
         </button>
-        <img src={image} alt={title} className="w-full rounded-t-2xl" />
+        {isVideoFile(image) ? (
+          <video
+            src={image}
+            className="w-full h-100 rounded-t-2xl"
+            controls
+            autoPlay
+            muted
+            loop
+          />
+        ) : (
+          <img src={image} alt={title} className="w-full rounded-t-2xl" />
+        )}
         <div className="p-5">
           <h5 className="mb-2 text-2xl font-bold text-white">{title}</h5>
           <p className="mb-3 font-normal text-neutral-400">{description}</p>

@@ -10,9 +10,9 @@ export const myProjects = [
       "Created movie browsing and streaming functionality.",
       "Applied modern mobile app development practices.",
     ],
-    href: "https://github.com/Noppanut01/Netflix-clone",
+    href: "https://github.com/Noppanut01/Netflix_clone",
     logo: "",
-    image: "/assets/projects/accessories.jpg",
+    image: "/assets/projects/netflix-clone.mp4",
     tags: [
       {
         id: 1,
@@ -42,9 +42,9 @@ export const myProjects = [
       "Developed Python-based backend for LLM integration.",
       "Created efficient document processing and embedding system.",
     ],
-    href: "https://github.com/Noppanut01/RagChatbot-LLM",
+    href: "https://github.com/Noppanut01/RagChatbotLLM",
     logo: "",
-    image: "/assets/projects/auth-system.jpg",
+    image: "/assets/projects/ragchatbot.png",
     tags: [
       {
         id: 1,
@@ -54,113 +54,38 @@ export const myProjects = [
       {
         id: 2,
         name: "LLM",
-        path: "/assets/logos/ai.svg",
+        path: "/assets/logos/ollama.svg",
       },
       {
         id: 3,
-        name: "Llama",
-        path: "/assets/logos/llama.svg",
+        name: "React",
+        path: "/assets/logos/react.svg",
       },
-    ],
-  },
-  {
-    id: 3,
-    title: "SE Project - Mobile App",
-    description:
-      "A comprehensive software engineering mobile application project demonstrating full-stack development skills.",
-    subDescription: [
-      "Developed a complete mobile application following software engineering principles.",
-      "Implemented backend services using Python framework.",
-      "Applied agile development methodology and version control.",
-      "Created user-friendly mobile interface with modern design patterns.",
-    ],
-    href: "https://github.com/Noppanut01/SE-project",
-    logo: "",
-    image: "/assets/projects/blazor-app.jpg",
-    tags: [
       {
-        id: 1,
+        id: 4,
+        name: "FastAPI",
+        path: "/assets/logos/fastapi.svg",
+      },
+      {
+        id: 5,
+        name: "Postgresql",
+        path: "/assets/logos/postgres.svg",
+      },
+      {
+        id: 6,
+        name: "Langchain",
+        path: "/assets/logos/langchain.svg",
+      },
+      {
+        id: 7,
         name: "Python",
         path: "/assets/logos/python.svg",
       },
-      {
-        id: 2,
-        name: "Mobile Dev",
-        path: "/assets/logos/mobile.svg",
-      },
-      {
-        id: 3,
-        name: "Software Engineering",
-        path: "/assets/logos/software.svg",
-      },
     ],
   },
+
   {
-    id: 4,
-    title: "Modern Profile",
-    description:
-      "A modern profile application built with Flutter showcasing clean UI design and smooth animations.",
-    subDescription: [
-      "Created modern user profile interface using Flutter.",
-      "Implemented smooth animations and transitions.",
-      "Applied Material Design principles for consistent UX.",
-      "Developed responsive layout for various screen sizes.",
-    ],
-    href: "https://github.com/Noppanut01/Modern-Profile",
-    logo: "",
-    image: "/assets/projects/game-engine.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "Flutter",
-        path: "/assets/logos/flutter.svg",
-      },
-      {
-        id: 2,
-        name: "Dart",
-        path: "/assets/logos/dart.svg",
-      },
-      {
-        id: 3,
-        name: "UI/UX",
-        path: "/assets/logos/design.svg",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Quiz App",
-    description:
-      "An interactive quiz application built with JavaScript for educational purposes.",
-    subDescription: [
-      "Developed interactive quiz interface using vanilla JavaScript.",
-      "Implemented dynamic question loading and scoring system.",
-      "Created responsive web design for multiple devices.",
-      "Added timer functionality and result tracking.",
-    ],
-    href: "https://github.com/Noppanut01/Quiz-app",
-    logo: "",
-    image: "/assets/projects/wordpress-theme.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "JavaScript",
-        path: "/assets/logos/javascript.svg",
-      },
-      {
-        id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
-      },
-      {
-        id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
-      },
-    ],
-  },
-  {
-    id: 6,
+    id: 3,
     title: "Portfolio Website",
     description:
       "This portfolio website built with React, Three.js and modern web technologies.",
@@ -170,9 +95,9 @@ export const myProjects = [
       "Designed responsive interface with Tailwind CSS.",
       "Added interactive animations and smooth user experience.",
     ],
-    href: "https://github.com/Noppanut01/Portfolio",
+    href: "https://github.com/Noppanut01/portfolio",
     logo: "",
-    image: "/assets/projects/elearning.jpg",
+    image: "/assets/projects/portfolio.png",
     tags: [
       {
         id: 1,
@@ -196,22 +121,84 @@ export const myProjects = [
       },
     ],
   },
+  {
+    id: 4,
+    title: "Html SlideShow",
+    description:
+      "This is slideshow using pure Html, Css, Javascript",
+    subDescription: [
+      "Built with Html and Css",
+      "Sript using Javascript",
+      "Added interactive animations and smooth user experience.",
+    ],
+    href: "https://github.com/Noppanut01/slideshow-html",
+    logo: "",
+    image: "/assets/projects/html-slideshow.mp4",
+    tags: [
+      {
+        id: 1,
+        name: "Html",
+        path: "/assets/logos/html5.svg",
+      },
+      {
+        id: 2,
+        name: "Css",
+        path: "/assets/logos/css3.svg",
+      },
+      {
+        id: 3,
+        name: "Javascript",
+        path: "/assets/logos/javascript.svg",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Html Stop_watch",
+    description:
+      "This is timer using pure Html, Css, Javascript",
+    subDescription: [
+      "Built with Html and Css",
+      "Sript using Javascript",
+      "Added interactive animations and smooth user experience.",
+    ],
+    href: "https://github.com/Noppanut01/Stop_watch",
+    logo: "",
+    image: "/assets/projects/timer.mp4",
+    tags: [
+      {
+        id: 1,
+        name: "Html",
+        path: "/assets/logos/html5.svg",
+      },
+      {
+        id: 2,
+        name: "Css",
+        path: "/assets/logos/css3.svg",
+      },
+      {
+        id: 3,
+        name: "Javascript",
+        path: "/assets/logos/javascript.svg",
+      },
+    ],
+  },
 ];
 
 export const mySocials = [
   {
-    name: "GitHub",
+    name: "Noppanut01",
     href: "https://github.com/Noppanut01",
     icon: "/assets/socials/github.svg",
   },
   {
-    name: "Linkedin",
-    href: "",
-    icon: "/assets/socials/linkedIn.svg",
+    name: "noppanut.jang2547@gmail.com",
+    href: "mailto: noppanut.jang2547@gmail.com",
+    icon: "/assets/socials/gmail.svg",
   },
   {
-    name: "Instagram",
-    href: "",
+    name: "noppanut_0",
+    href: "https://www.instagram.com/noppanut_o/",
     icon: "/assets/socials/instagram.svg",
   },
 ];
@@ -222,61 +209,92 @@ export const experiences = [
     job: "University of Burgundy, Polytech Dijon",
     date: "2 Months",
     contents: [
-      "Completed international internship program focusing on electronics and computer engineering.",
-      "Gained hands-on experience with European engineering standards and methodologies.",
-      "Worked on embedded systems and microcontroller programming projects.",
-      "Collaborated with international team members on technical projects and research.",
-      "Enhanced technical communication skills in multicultural engineering environment.",
+      "Developed a simulation web application for vacuum robots.",
+      "Designed and implemented frontend using TypeScript.",
+      "Integrated real-time robot movement visualization.",
     ],
   },
 ];
 export const skills = [
   {
     name: "Python",
-    category: "Programming",
-    body: "Building AI/ML projects like RAG chatbots with LLM integration and backend development.",
+    category: "Backend",
     icon: "/assets/logos/python.svg",
   },
   {
     name: "Flutter/Dart",
     category: "Mobile Dev",
-    body: "Creating cross-platform mobile apps including Netflix clone and modern profile interfaces.",
     icon: "/assets/logos/flutter.svg",
+  },
+  {
+    name: "Html",
+    category: "Web Dev",
+    icon: "/assets/logos/html5.svg",
+  },
+  {
+    name: "Css",
+    category: "Styling",
+    icon: "/assets/logos/css3.svg",
   },
   {
     name: "JavaScript",
     category: "Web Dev",
-    body: "Developing interactive web applications and quiz systems with dynamic functionality.",
     icon: "/assets/logos/javascript.svg",
   },
   {
     name: "React.js",
     category: "Frontend",
-    body: "Building modern web applications with component-based architecture and this portfolio.",
     icon: "/assets/logos/react.svg",
   },
-  {
-    name: "Three.js",
-    category: "3D Graphics",
-    body: "Creating immersive 3D experiences and interactive visualizations for web applications.",
-    icon: "/assets/logos/threejs.svg",
-  },
+
   {
     name: "C/C++",
     category: "Systems",
-    body: "Embedded systems programming and microcontroller development from internship experience.",
     icon: "/assets/logos/cplusplus.svg",
   },
   {
     name: "Tailwind CSS",
     category: "Styling",
-    body: "Designing responsive interfaces with utility-first approach for modern web applications.",
     icon: "/assets/logos/tailwindcss.svg",
+  },
+  {
+    name: "Bootstrap",
+    category: "Styling",
+    icon: "/assets/logos/bootstrap.svg",
   },
   {
     name: "Git/GitHub",
     category: "Tools",
-    body: "Version control for all projects with collaborative development workflows.",
     icon: "/assets/logos/git.svg",
+  },
+  {
+    name: "LangChain",
+    category: "Backend",
+    icon: "/assets/logos/langchain.svg",
+  },
+  {
+    name: "FastAPI",
+    category: "Backend",
+    icon: "/assets/logos/fastapi.svg",
+  },
+  {
+    name: "Postman",
+    category: "Tools",
+    icon: "/assets/logos/postman.svg",
+  },
+  {
+    name: "Mysql",
+    category: "Database",
+    icon: "/assets/logos/mysql.svg",
+  },
+  {
+    name: "Postgresql",
+    category: "Database",
+    icon: "/assets/logos/postgres.svg",
+  },
+  {
+    name: "Php",
+    category: "Web dev",
+    icon: "/assets/logos/php.svg",
   },
 ];

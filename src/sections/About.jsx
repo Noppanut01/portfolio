@@ -33,7 +33,7 @@ const SkillCard = ({ icon, name }) => {
 const About = () => {
   const grid2Container = useRef();
   return (
-    <section className="c-space section-spacing" id="about">
+    <section className="c-space section-spacing mb-16" id="about">
       <h2 className="text-heading">About Me</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
         {/* Grid 1 */}
@@ -43,11 +43,11 @@ const About = () => {
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           {/* Profile Photo */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-40 z-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-60 z-20">
             <img
-              src="assets/profile-photo.jpg"
+              src="assets/profile.jpg"
               alt="Noppanut Maiprot"
-              className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/30 shadow-2xl"
+              className="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-white/30 shadow-2xl"
               onError={(e) => {
                 e.target.src = 'https://ui-avatars.com/api/?name=Noppanut+Maiprot&background=6366f1&color=fff&size=192';
               }}
@@ -62,15 +62,15 @@ const About = () => {
             {/* Download Buttons */}
             <div className="flex gap-2 mt-3">
               <a
-                href="/docs/transcipt.pdf"
-                download="Noppanut_Transcript.pdf"
+                href="docs/transcipt.pdf"
+                download="transcript.pdf"
                 className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-blue-600/80 rounded hover:bg-blue-700/80 transition-colors"
               >
                 📄 Transcript
               </a>
               <a
-                href="/docs/mydata.pdf"
-                download="Noppanut_Resume.pdf"
+                href="docs/resume.pdf"
+                download="resume.pdf"
                 className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-green-600/80 rounded hover:bg-green-700/80 transition-colors"
               >
                 📋 Resume
@@ -112,7 +112,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Location</p>
             <p className="subtext">
-              Based in Thailand, open to remote internships and collaborations worldwide
+              117 ซ.พิบูลย์สงคราม 22 อ.บางเขน จ.นนทบุรี 11000
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">

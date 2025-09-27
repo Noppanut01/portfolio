@@ -2,6 +2,11 @@ import { useState } from "react";
 import Project from "../components/Project";
 import { myProjects } from "../constants";
 import { motion, useMotionValue, useSpring } from "motion/react";
+
+const isVideoFile = (filename) => {
+  const videoExtensions = ['.mp4', '.webm', '.ogg', '.avi', '.mov', '.mkv'];
+  return videoExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+};
 const Projects = () => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -13,9 +18,9 @@ const Projects = () => {
   };
   const [preview, setPreview] = useState(null);
   return (
-    <section
+    <section id="project"
       onMouseMove={handleMouseMove}
-      className="relative c-space section-spacing"
+      className="relative c-space section-spacing mb-16"
     >
       <h2 className="text-heading">My Selected Projects</h2>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
@@ -23,11 +28,22 @@ const Projects = () => {
         <Project key={project.id} {...project} setPreview={setPreview} />
       ))}
       {preview && (
-        <motion.img
-          className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
-          src={preview}
-          style={{ x: springX, y: springY }}
-        />
+        isVideoFile(preview) ? (
+          <motion.video
+            className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
+            src={preview}
+            style={{ x: springX, y: springY }}
+            autoPlay
+            muted
+            loop
+          />
+        ) : (
+          <motion.img
+            className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
+            src={preview}
+            style={{ x: springX, y: springY }}
+          />
+        )
       )}
     </section>
   );
