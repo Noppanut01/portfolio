@@ -30,15 +30,25 @@ const Contact = () => {
 
     try {
       console.log("From submitted:", formData);
+      // await emailjs.send(
+      //   "service_38sd7br",
+      //   "template_d2qj3q8",
+      //   {
+      //     from_name: formData.name,
+      //     to_name: "Noppanut",
+
+      //     to_email: "noppanut.jang2547@gmail.com",
+      //     message: formData.message,
+      //   },
+      //   "ZLQEN_5bP5BAYg_HK"
+      // );
       await emailjs.send(
-        "service_38sd7br",
-        "template_d2qj3q8",
+        "service_38sd7br", "template_d2qj3q8",
         {
-          from_name: formData.name,
-          to_name: "Noppanut",
-          from_email: formData.email,
-          to_email: "noppanut.jang2547@gmail.com",
+          name: formData.name,
           message: formData.message,
+          email: formData.email,
+
         },
         "ZLQEN_5bP5BAYg_HK"
       );
