@@ -197,10 +197,15 @@ export const mySocials = [
     icon: "/assets/socials/gmail.svg",
   },
   {
-    name: "noppanut_0",
+    name: "noppanut_o",
     href: "https://www.instagram.com/noppanut_o/",
     icon: "/assets/socials/instagram.svg",
   },
+  {
+    name: "noppanut_01",
+    href: "https://discord.com/users/543376298727309332",
+    icon: "/assets/socials/discord.svg",
+  }
 ];
 
 export const experiences = [
@@ -209,6 +214,7 @@ export const experiences = [
     job: "University of Burgundy, Polytech Dijon",
     date: "2 Months",
     contents: [
+      "Vacuum robot simulation project",
       "Developed a simulation web application for vacuum robots.",
       "Designed and implemented frontend using TypeScript.",
       "Integrated real-time robot movement visualization.",
@@ -296,5 +302,20 @@ export const skills = [
     name: "Php",
     category: "Web dev",
     icon: "/assets/logos/php.svg",
+  },
+  {
+    name: "Azure",
+    category: "Tools",
+    icon: "/assets/logos/azure.svg",
+  },
+  {
+    name: "Vscode",
+    category: "Tools",
+    icon: "/assets/logos/vscode.svg",
+  },
+  {
+    name: "Claude Code",
+    category: "Tools",
+    icon: "/assets/logos/claude.svg",
   },
 ];

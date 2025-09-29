@@ -43,11 +43,11 @@ const About = () => {
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           {/* Profile Photo */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-60 z-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-32 sm:-translate-y-48 md:-translate-y-60 z-10">
             <img
               src="assets/profile.jpg"
               alt="Noppanut Maiprot"
-              className="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-white/30 shadow-2xl"
+              className="w-32 h-32 sm:w-48 sm:h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-white/30 shadow-2xl"
               onError={(e) => {
                 e.target.src = 'https://ui-avatars.com/api/?name=Noppanut+Maiprot&background=6366f1&color=fff&size=192';
               }}
@@ -62,7 +62,7 @@ const About = () => {
             {/* Download Buttons */}
             <div className="flex gap-2 mt-3">
               <a
-                href="docs/transcipt.pdf"
+                href="docs/transcript.pdf"
                 download="transcript.pdf"
                 className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-blue-600/80 rounded hover:bg-blue-700/80 transition-colors"
               >
@@ -74,6 +74,13 @@ const About = () => {
                 className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-green-600/80 rounded hover:bg-green-700/80 transition-colors"
               >
                 📋 Resume
+              </a>
+              <a
+                href="docs/certificates.zip"
+                download="certificates.zip"
+                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-purple-600/80 rounded hover:bg-purple-700/80 transition-colors"
+              >
+                📰 Certificates
               </a>
             </div>
           </div>
@@ -123,7 +130,7 @@ const About = () => {
 
       {/* Skills Section */}
       <div className="items-start mt-16 md:mt-20">
-        <h3 className="text-3xl font-bold mb-8 text-center">My Skills & Expertise</h3>
+        <h3 className="text-3xl font-bold mb-8 text-center">My Skills & Tools</h3>
         <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
           <Marquee pauseOnHover className="[--duration:20s]">
             {skills.slice(0, 4).map((skill) => (
